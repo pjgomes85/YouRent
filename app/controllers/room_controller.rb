@@ -1,6 +1,6 @@
 class RoomController < ApplicationController
   before_action :set_room, except: %i[index new create]
-
+  before_action :authenticate_user!, except: [:show]
   def index
     @rooms = current_user.rooms
   end
@@ -34,6 +34,10 @@ class RoomController < ApplicationController
   end
 
   def location
+  end
+
+  def show
+
   end
 
   def update
