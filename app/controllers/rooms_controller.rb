@@ -1,4 +1,4 @@
-class RoomController < ApplicationController
+class RoomsController < ApplicationController
   before_action :set_room, except: %i[index new create]
   before_action :authenticate_user!, except: [:show]
   def index
@@ -6,7 +6,7 @@ class RoomController < ApplicationController
   end
 
   def new
-    @room = current_user.build
+    @room = current_user.rooms.build
   end
 
   def create
