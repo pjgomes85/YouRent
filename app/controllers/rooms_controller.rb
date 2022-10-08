@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
   end
 
   def new
-    @room = current_user.rooms.build
+    @room = Room.new
   end
 
   def create
@@ -56,6 +56,6 @@ class RoomsController < ApplicationController
   end
 
   def room_params
-    params.require(:room).permit(:home_type, :room_type, :accomodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active )
+    params.require(:room).permit(:home_type, :room_type, :acommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active )
   end
 end
