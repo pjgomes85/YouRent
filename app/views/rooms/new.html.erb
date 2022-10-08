@@ -1,5 +1,6 @@
-<div class ="panel panel-default">
-<div class="panel-heading">
+
+<div class="panel panel-default">
+	<div class="panel-heading">
 Create your beautiful place
 </div>
 <div class="panel-body">
@@ -10,13 +11,14 @@ Create your beautiful place
 
     <div class="row">
       <div class="col-md-4 select">
-        <div class="form-group">
+        <form class="form-inline">
           <label>Home type</label>
           <%= f.select :home_type, [["Apartment", "Apartment"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"] ],
                       id: "home_type", prompt: "Select...", class: "form-control"  %>
-        </div>
+    </div>
 
-      </div>
+
+
       <div class="col-md-4 select">
         <div class="form-group">
           <label>Room type</label>
@@ -25,6 +27,7 @@ Create your beautiful place
         </div>
       </div>
 
+
       <div class="col-md-4 select">
         <div class="form-group">
           <label>Acommodate</label>
@@ -32,6 +35,9 @@ Create your beautiful place
                       id: "acommodate", prompt: "Select...", class: "form-control"  %>
         </div>
       </div>
+
+
+
       <div class="col-md-4 select">
         <div class="form-group">
           <label>Bedrooms</label>
@@ -40,19 +46,19 @@ Create your beautiful place
         </div>
       </div>
 
+
       <div class="col-md-4 select">
         <div class="form-group">
           <label>Bathrooms</label>
           <%= f.select :bath_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ],
                       id: "bath_room", prompt: "Select...", class: "form-control"  %>
         </div>
-      </div>
 
-    </div>
+  </div>
 
-    <div><%= f.submit "Save", class: "btn btn-normal" %></div>
+    <div><%= f.submit "Save", class: "btn btn-primary" %></div>
 
     <% end%>
-    </div>
+
   </div>
 </div>
