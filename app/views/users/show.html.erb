@@ -9,8 +9,8 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Verification</div>
 			<div class="panel-body">
-				Email Address<br>
-				Phone Number
+				Email: <%= @user.email %>
+				Phone Number: <%= @user.phone_number %>
 			</div>
 		</div>
 	</div>
@@ -31,7 +31,7 @@
 					<div class="panel panel-default">
 						<%# <div class="panel-heading preview">
 							<%= image_tag room.photos[0].image.url(:medium) %>
-						<%# </div> %> 
+						<%# </div> %>
 						<div class="panel-body">
 							<%= link_to room.listing_name, room %>
 						</div>
