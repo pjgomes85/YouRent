@@ -1,1 +1,65 @@
 // Specific CSS for your home-page
+body {
+  color: #565a5c;
+  background-color: #F8F8F8;
+}
+
+.container {
+	width: 80%;
+}
+
+a {
+  color: #00A699;
+}
+
+.text-babu, .icon-babu {
+  color: #00A699;
+}
+
+.btn {
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 9px 27px;
+}
+
+.btn-small {
+  padding: 5px, 15px;
+  margin-top: 15px;
+}
+
+.btn:hover, .btn-focus {
+  color: #fff
+}
+
+.btn-btn-defeault {
+  width: 100%;
+  border-color: #c4c4c4;
+  background: white ;
+  color: #484848;
+  border-radius: 2px ;
+  padding: 10px 0;
+  margin: 10px;
+}
+
+.btn, .btn-normal {
+  border: 1px solid #ff5a5f;
+  background-color: #ff5a5f;
+}
+
+.btn, .btn-normal:hover {
+  outline: none;
+  border-color: #e00007;
+  background-color: #e00007;
+}
+
+.btn, .btn-form {
+  border: 1px solid #ff5a5f;
+  background-color: #ff5a5f;
+}
+
+ .btn-form:hover {
+  outline: none;
+  border-color: #e00007;
+  background-color: #e00007;
+}
