@@ -12,7 +12,7 @@
 
       <div class="panel-body">
         <div class="container">
-          <%= form for @room do |f| %>
+          <%= form_for @room do |f| %>
 
             <div class="row form-group">
               <div class="col-md-4">
@@ -40,7 +40,7 @@
             <br/><br/>
 
             <div class="text-center">
-              <%= f.submit "Save", class: "btn btn-form" %>
+              <%= f.submit "Save", class: "btn btn-primary" %>
             </div>
 
 
