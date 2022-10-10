@@ -29,7 +29,7 @@ gem "jbuilder"
 
 gem "devise"
 
-gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
+
 
 
 
@@ -69,6 +69,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -82,3 +83,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
+
+ 
+  gem 'aws-sdk'

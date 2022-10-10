@@ -18,14 +18,14 @@ module RailsAuthentication
 
     config.paperclip_defaults = {
       storage: :s3,
-      s3_region: ENV["AWS_S3_REGION"],
+      s3_host_name: 's3-eu-west-2.amazonaws.com',
       s3_credentials: {
-        s3_host_name: ENV["AWS_S3_HOST_NAME"],
-        bucket: ENV["AWS_S3_BUCKET"],
-        access_key_id: ENV["AWS_ACCESS_KEY_ID"],
-        secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
-        }
+        bucket: 'pauloair',
+        access_key_id: 'AKIARDT7LJ56INMPZCUP',
+        secret_access_key: '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',
+        s3_region: 'eu-west-2'
       }
+    }
 
     # Configuration for the application, engines, and railties goes here.
     #

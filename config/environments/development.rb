@@ -62,6 +62,19 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   Paperclip.options[:command_path] = "/usr/local/bin/"
+
+
+
+      config.paperclip_defaults = {
+        storage: :s3,
+        path: 'class/attachment/:id/:style/:filename',
+        s3_host_name: "s3-",
+        s3_credentials: {
+          bucket: "pauloairbnb",
+          :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+          :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      }
+    }
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
