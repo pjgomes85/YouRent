@@ -8,15 +8,13 @@ Create your beautiful place
 
 <%= form_for @room do |f| %>
 
-
-    <div class="row">
       <div class="col-md-4 select">
-        <form class="form-inline">
+        <div class="form-group">
           <label>Home type</label>
           <%= f.select :home_type, [["Apartment", "Apartment"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"] ],
                       id: "home_type", prompt: "Select...", class: "form-control"  %>
-    </div>
-
+        </div>
+      </div>
 
 
       <div class="col-md-4 select">
@@ -54,9 +52,9 @@ Create your beautiful place
                       id: "bath_room", prompt: "Select...", class: "form-control"  %>
         </div>
 
-  </div>
+  
 
-    <div class="text-center"> <%= f.submit "Save", class: "btn btn-form" %> </div>
+    <div class="text-center"> <%= f.submit "Create My Room", class: "btn btn-form" %> </div>
 
     <% end%>
 
