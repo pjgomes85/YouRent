@@ -29,6 +29,7 @@ gem "jbuilder"
 
 gem "devise"
 
+gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
 
 
 
