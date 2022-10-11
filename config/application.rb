@@ -16,16 +16,6 @@ module RailsAuthentication
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    config.paperclip_defaults = {
-      storage: :s3,
-      s3_host_name: 's3-eu-west-2.amazonaws.com',
-      s3_credentials: {
-        bucket: 'pauloair',
-        access_key_id: 'AKIARDT7LJ56INMPZCUP',
-        secret_access_key: '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',
-        s3_region: 'eu-west-2'
-      }
-    }
 
     # Configuration for the application, engines, and railties goes here.
     #

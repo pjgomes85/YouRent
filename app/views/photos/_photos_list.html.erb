@@ -1,12 +1,12 @@
-<% if @photos.count > 0 %>
+<% if @room.photos.count > 0 %>
   <br/><br/>
 
   <div class="row">
-    <% @photos.each do |photo| %>
+    <% @room.photos.each do |photo| %>
       <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel panel-heading preview">
-          <%= image_tag photo.image.url() %>
+          <%= cl_image_tag photo.key, crop: :fill  %>
         </div>
       </div>
     </div>
