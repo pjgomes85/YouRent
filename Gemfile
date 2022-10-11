@@ -31,7 +31,7 @@ gem "devise"
 
 
 
-
+gem "dotenv-rails", groups: [:development, :test]
 
 
 # Use Redis adapter to run Action Cable in production
@@ -83,8 +83,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
-
- 
-  gem 'aws-sdk'
