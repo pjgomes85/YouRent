@@ -11,7 +11,7 @@
 
         <div class="panel-body">
           <span class="pull-right">
-            <%= link_to   room_photo_path(photo.room_id, photo), remote: true,  method: :delete, data: {confirm: "Are You Sure?"} do  %>
+            <%= link_to room_photo_path(photo.room_id, photo), remote: true, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do  %>
               <i class="fa-solid fa-trash-can"></i>
               <% end %>
           </span>
