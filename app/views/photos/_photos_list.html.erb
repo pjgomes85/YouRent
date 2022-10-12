@@ -1,4 +1,4 @@
-<% if @room.photos.count > 0 %>
+<%# <%  @room.photos.count > 0 %>
   <br/><br/>
 
   <div class="row">
@@ -8,8 +8,12 @@
         <div class="card">
           <%= cl_image_tag photo.key, crop: :fill  %>
         </div>
+          <div class="panel-body">
+            <span class="pull-right">
+              <%# <%= link_to   room_photo_path(photo.room_id, photo), remote: true,  method: :delete %> %>
+                <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+        </span>
       </div>
     </div>
-    <% end %>
   </div>
-<% end %>
