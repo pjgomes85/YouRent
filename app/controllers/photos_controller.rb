@@ -18,7 +18,7 @@ class PhotosController < ApplicationController
 
       @photo.destroy
       @photos = Photo.where(room_id: room.id)
-
+      redirect_back(fallback_location: request.referer)
       respond_to :js
     end
 end
