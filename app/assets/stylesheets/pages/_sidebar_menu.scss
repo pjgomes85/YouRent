@@ -1,0 +1,56 @@
+.sidebar-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.sidebar-item {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #82888a;
+  border-bottom: 1px solid #CCC;
+}
+
+.sidebar-item:hover {
+  color: #82888a;
+}
+
+.sidebar-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+
+.sidebar-link {
+  color: #82888a;
+  text-decoration: none;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.sidebar-link:hover {
+  color: #cacccd;
+  text-decoration: none;
+}
+
+
+.sidebar-item {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #82888a;
+}
+
+.sidebar-link {
+  color: #82888a;
+  text-decoration: none;
+}
+
+.sidebar-link:hover, .sidebar-link:focus {
+  color: #CACCCD;
+  text-decoration: none;
+}
+
+.active.sidebar-link {
+  color: #565A5C;
+  font-weight: bold;
+  text-decoration: none;
+}
