@@ -33,7 +33,7 @@ gem "cloudinary"
 
 gem "dotenv-rails", groups: [:development, :test]
 
-gem "paperclip", "~> 5.1.0"
+gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
 
 
 
