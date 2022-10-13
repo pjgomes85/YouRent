@@ -12,7 +12,7 @@ class Room < ApplicationRecord
     if self.photos.length > 0
       self.photos[0].image.url(size)
     else
-      "logo.png"
+      "No-Image.jpeg"
     end
   end
 end
