@@ -35,6 +35,8 @@ gem "cloudinary"
 
 gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
 
+gem "pg"
+
 
 
 # Use Redis adapter to run Action Cable in production
