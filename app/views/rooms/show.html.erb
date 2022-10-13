@@ -43,9 +43,9 @@
 
       <div class="row text-center">
         <div class="col-md-3"><%= @room.home_type %></div>
-        <div class="col-md-3"><%= @room.acommodate %></div>
-        <div class="col-md-3"><%= @room.bed_room %></div>
-        <div class="col-md-3"><%= @room.bath_room %></div>
+        <div class="col-md-3"><%= pluralize(@room.acommodate, "Guest") %></div>
+        <div class="col-md-3"><%= pluralize(@room.bed_room, "Bedroom") %></div>
+        <div class="col-md-3"><%= pluralize(@room.bath_room, "Bathroom") %></div>
       </div>
 
 
