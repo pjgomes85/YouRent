@@ -42,7 +42,9 @@
 <br/>
 <br/>
 
+<% is_ready = !@room.active && !@room.price.blank? && !@room.listing_name.blank? && !@room.photos.blank? && !@room.address.blank? %>
+
 <%= form_for @room do |f| %>
   <%= f.hidden_field :active, value: true %>
-  <%= f.submit "Publish", id: "publish_button", class: "btn btn-normal btn-block" %>
+  <%= f.submit "Publish", id: "publish_button", class: "btn btn-normal btn-block", disabled: !is_ready %>
 <% end %>
