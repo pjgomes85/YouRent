@@ -31,10 +31,18 @@
      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
   </li>
 
-  <li class="sidebar-item">
-    <%= link_to "Location", location_room_path, class: "sidebar-link" %>
-      <% if !@room.address.blank? %>
-     <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
-      <% end %>
-  </li>
+    <li class="sidebar-item">
+      <%= link_to "Location", location_room_path, class: "sidebar-link" %>
+        <% if !@room.address.blank? %>
+      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+        <% end %>
+    </li>
 </ul>
+<br/>
+<br/>
+<br/>
+
+<%= form_for @room do |f| %>
+  <%= f.hidden_field :active, value: true %>
+  <%= f.submit "Publish", id: "publish_button", class: "btn btn-normal btn-block" %>
+<% end %>
