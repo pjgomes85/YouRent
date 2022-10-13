@@ -5,6 +5,11 @@
 </div>
 <br/>
 
+    <div class="row">
+
+      <!---LEFT PANEL---->
+      <div class="col-md-8">
+
     <!-- Listing_name --->
     <div class="row">
       <div class="col-md-8">
@@ -19,7 +24,30 @@
     <hr/>
 
     <!-- Room Info --->
-    <div class="row">
+    <div class="row text-babu">
+      <div class="row text-center row-space-1">
+
+        <div class="col-md-3">
+          <i class="fa fa-home fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-user-circle-o fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-bed fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-bath fa-2x"></i>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-md-3"><%= @room.home_type %></div>
+        <div class="col-md-3"><%= @room.acommodate %></div>
+        <div class="col-md-3"><%= @room.bed_room %></div>
+        <div class="col-md-3"><%= @room.bath_room %></div>
+      </div>
+
 
     </div>
     <hr/>
