@@ -31,7 +31,7 @@ gem "devise"
 
 gem "cloudinary"
 
-gem "dotenv-rails", groups: [:development, :test]
+# gem "dotenv-rails", groups: [:development, :test]
 
 gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
 

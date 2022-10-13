@@ -111,10 +111,6 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    dotenv (2.8.1)
-    dotenv-rails (2.8.1)
-      dotenv (= 2.8.1)
-      railties (>= 3.2)
     erubi (1.11.0)
     execjs (2.8.1)
     ffi (1.15.5)
@@ -288,7 +284,6 @@ DEPENDENCIES
   cloudinary
   debug
   devise
-  dotenv-rails
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
