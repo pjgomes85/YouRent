@@ -49,7 +49,7 @@ class RoomsController < ApplicationController
       {
         lat: room.latitude,
         lng: room.longitude,
-        # info_window: render_to_string(partial: "info_window", locals: {room: room}),
+        info_window: @room.cover_photo(:thumb)
         # image_url: helpers.asset_url("logo.png")
       }
     end
