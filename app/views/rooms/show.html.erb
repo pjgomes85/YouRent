@@ -128,6 +128,15 @@
     <hr/>
   </div>
 
+    <!----- MAPBOX --------->
+    <div class="row">
+      <div  style='width: 400px; height: 300px;'></div>
+      <div style="width: 50%; height: 500px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+
   <!----- Right Panel -------->
   <div class="col-md-8"></div>
 
