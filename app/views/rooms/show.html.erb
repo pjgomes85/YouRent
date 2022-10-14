@@ -101,7 +101,7 @@
         <!-- Indicators -->
         <ol class="carousel-indicators">
           <% @photos.each do |photo| %>
-          <li data-target="#myCarousel" data-slide-to="<%= photo.id %>" class="active" ></li>
+          <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
           <% end %>
         </ol>
 
@@ -109,7 +109,7 @@
         <div class="carousel-inner">
           <% @photos.each do |photo| %>
             <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-              <% image_tag photo.image.url() %>
+              <%= image_tag photo.image.url() %>
             </div>
           <% end %>
         </div>
