@@ -130,11 +130,10 @@
 
     <!----- MAPBOX --------->
     <div class="row">
-      <div  style='width: 400px; height: 300px;'></div>
-      <div style="width: 50%; height: 500px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      <div data-controller="map"
+      id='map'
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      style="width: 50%; height: 500px;"></div>
 
 
   <!----- Right Panel -------->
@@ -143,3 +142,21 @@
   </div>
 </div>
 </div>
+
+<%#
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicGpnb21lczg1IiwiYSI6ImNsOThmMmRqcTJveGczdXFtYmlvN20wOTkifQ.5CPwS5icDdvRiIa01SAbeA';
+const map = new mapboxgl.Map({
+container: 'map', // container ID
+style: 'mapbox://styles/mapbox/streets-v11', // style URL
+center: [-74.5, 40], // starting position [lng, lat]
+zoom: 9, // starting zoom
+projection: 'globe' // display the map as a 3D globe
+});
+map.on('style.load', () => {
+map.setFog({}); // Set the default atmosphere style
+});
+</script> %>

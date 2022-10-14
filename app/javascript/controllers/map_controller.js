@@ -1,5 +1,6 @@
+// Connects to data-controller="map"
 import { Controller } from "@hotwired/stimulus"
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
+
 
 export default class extends Controller {
   static values = {
@@ -8,11 +9,11 @@ export default class extends Controller {
   }
 
   connect() {
-    mapboxgl.accessToken = this.apiKeyValue
+    mapboxgl.accessToken = 'pk.eyJ1IjoicGpnb21lczg1IiwiYSI6ImNsOThmMmRqcTJveGczdXFtYmlvN20wOTkifQ.5CPwS5icDdvRiIa01SAbeA'
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/streets-v8',
       center: [-0.5800364, 44.841225],
       zoom: 13
     });
@@ -44,7 +45,7 @@ export default class extends Controller {
 
     })
   }
- 
+
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
