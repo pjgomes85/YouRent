@@ -16,7 +16,25 @@ a {
   color: #00A699;
 }
 
+
 .card {
   border-radius: 15px !important;
   width: 70%;
+  height: 80%;
+}
+
+.carousel {
+  width: 50% !important;
+  height: 50% !important;
+}
+
+.item {
+  height: 500px;
+}
+
+
+.item .carousel-img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
 }

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <%= image_tag @room.cover_photo(nil), width: "70%", class: "card" %>
+    <%= image_tag @room.cover_photo(nil), class: "card" %>
   </div>
 </div>
 <br/>
@@ -88,15 +88,12 @@
     </div>
     <hr/>
 
-    <!--------- TEST ----------->
-
-
-    <!---------- Test -------->
-
 
     <!---- Carousel ------->
     <div class="row">
-    <!---- Bootsrap Carousel START----->
+
+      <% if @photos.length > 0 %>
+
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -106,10 +103,10 @@
         </ol>
 
         <!-- Wrapper for slides -->
-        <div class="carousel-inner">
+        <div class="carousel-inner item">
           <% @photos.each do |photo| %>
             <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-              <%= image_tag photo.image.url() %>
+              <%= image_tag photo.image.url(), class: "carousel-img" %>
             </div>
           <% end %>
         </div>
@@ -123,8 +120,10 @@
           <span class="glyphicon glyphicon-chevron-right"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
-    <!---- Bootrap Carousel END------>
+
+
+      <% end %>
+
     </div>
     <hr/>
   </div>
