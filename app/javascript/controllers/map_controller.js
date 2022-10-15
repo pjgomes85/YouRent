@@ -1,7 +1,6 @@
 // Connects to data-controller="map"
 import { Controller } from "@hotwired/stimulus"
 
-
 export default class extends Controller {
   static values = {
     apiKey: String,
@@ -40,7 +39,7 @@ export default class extends Controller {
         .setPopup(popup)
         .addTo(this.map);
     });
-    
+
   }
 }
 
