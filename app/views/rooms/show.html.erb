@@ -64,22 +64,22 @@
     <!---- Amenities --->
     <div class="row">
        <div class="row">
-       <h4>Amenities</h4>
+       <h4 class="amenities-title">What this place offers</h4>
        </div>
 
       <div class="col-md-9">
         <div class="row">
           <div class="col-md-6">
             <ul class="amenities">
-              <li class="<%= 'text-line-through' if !@room.is_tv %>"><i class="fa-sharp fa-solid fa-tv"></i>  TV</li>
-              <li class="<%= 'text-line-through' if !@room.is_kitchen %>"><i class="fa-solid fa-kitchen-set"></i> Kitchen</li>
-              <li class="<%= 'text-line-through' if !@room.is_internet %>"><i class="fa-solid fa-wifi"></i>  Internet</li>
+              <li class="<%= 'text-line-through' if !@room.is_tv %>"><i class="fa-sharp fa-solid fa-tv"></i>   TV</li>
+              <li class="<%= 'text-line-through' if !@room.is_kitchen %>"><i class="fa-solid fa-kitchen-set"></i>   Kitchen</li>
+              <li class="<%= 'text-line-through' if !@room.is_internet %>"><i class="fa-solid fa-wifi"></i>   Internet</li>
             </ul>
           </div>
           <div class="col-md-6">
             <ul class="amenities">
-              <li class="<%= 'text-line-through' if !@room.is_heating %>"><i class="fa-solid fa-thermometer-three-quarters" aria-hidden="true"></i> Heating</li>
-              <li class="<%= 'text-line-through' if !@room.is_air %>"><i class="fa-solid fa-snowflake"></i> Air Conditioning</li>
+              <li class="<%= 'text-line-through' if !@room.is_heating %>"><i class="fa-solid fa-thermometer-three-quarters" aria-hidden="true"></i>   Heating</li>
+              <li class="<%= 'text-line-through' if !@room.is_air %>"><i class="fa-solid fa-snowflake"></i>   Air Conditioning</li>
             </ul>
           </div>
 
