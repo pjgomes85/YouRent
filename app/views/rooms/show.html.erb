@@ -135,6 +135,30 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
       data-map-markers-value="<%= @markers.to_json %>"
       style="width:100%; height: 500px;"></div>
+    </div>
+
+
+      <!-- NEAR ROOMS -->
+      <div class=row>
+        <h3>Near by</h3>
+        <% for room in @room.nearbys( 10) %>
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading preview">
+                <%= image_tag room.cover_photo(:medium) %>
+              </div>
+              <div class="panel-body">
+                <%= link_to room.listing_name %><br/>
+                (<%= room.distance_to(2) %> kms away)
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
 
 
   <!----- Right Panel -------->

@@ -42,17 +42,8 @@ class RoomsController < ApplicationController
 
   def show
     @photos = @room.photos
-
-    @rooms = Room.all
-    # The `geocoded` scope filters only flats with coordinates
-    @markers = @rooms.geocoded.map do |room|
-      {
-        lat: room.latitude,
-        lng: room.longitude,
-        info_window: render_to_string(partial: "popup")
-        # image_url: helpers.asset_url("logo.png")
-      }
-    end
+    @room = Room.find(params[:id])
+    @markers = [{ lat: @room.latitude, lng: @room.longitude, info_window: render_to_string(partial: "popup" )}]
   end
 
   def update
