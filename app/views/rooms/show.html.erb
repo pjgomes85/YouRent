@@ -16,8 +16,8 @@
         <%= @room.address %>
       </div>
       <div class="col-md-4 text center">
-        <%= image_tag avatar_url(@room.user), class: "img-circle avatar-medium" %><br/><br/>
-        <%= @room.user.fullname %>
+        <%= image_tag avatar_url(@room.user), class: "img-circle avatar-medium pull-right" %><br/><br/>
+        <p class ="pull-right"><%= @room.user.fullname %></p>
       </div>
     </div>
 
@@ -55,7 +55,7 @@
     <!---- About --->
     <div class="row">
       <div class="col-md-12">
-        <h3>About This Listings</h3>
+        <h3 class="about-listings">About This Listings</h3>
           <p><%= @room.summary %></p>
       </div>
     </div>
