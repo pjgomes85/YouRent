@@ -38,7 +38,9 @@ gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
 
 gem "geocoder"
 
-gem "font-awesome-sass", "~> 6.2.0"
+gem "font-awesome-sass"
+
+
 
 
 

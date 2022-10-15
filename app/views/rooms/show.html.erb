@@ -71,15 +71,15 @@
         <div class="row">
           <div class="col-md-6">
             <ul class="amenities">
-              <i class="fa-light fa-tv-retro"></i><li class="<%= 'text-line-through' if !@room.is_tv %>">TV</li>
-              <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Kitchen</li>
-              <li class="<%= 'text-line-through' if !@room.is_internet %>">Internet</li>
+              <li class="<%= 'text-line-through' if !@room.is_tv %>"><i class="fa-sharp fa-solid fa-tv"></i>  TV</li>
+              <li class="<%= 'text-line-through' if !@room.is_kitchen %>"><i class="fa-solid fa-kitchen-set"></i> Kitchen</li>
+              <li class="<%= 'text-line-through' if !@room.is_internet %>"><i class="fa-solid fa-wifi"></i>  Internet</li>
             </ul>
           </div>
           <div class="col-md-6">
             <ul class="amenities">
-              <li class="<%= 'text-line-through' if !@room.is_heating %>">Heating</li>
-              <li class="<%= 'text-line-through' if !@room.is_air %>">Air Conditioning</li>
+              <li class="<%= 'text-line-through' if !@room.is_heating %>"><i class="fa-solid fa-thermometer-three-quarters" aria-hidden="true"></i> Heating</li>
+              <li class="<%= 'text-line-through' if !@room.is_air %>"><i class="fa-solid fa-snowflake"></i> Air Conditioning</li>
             </ul>
           </div>
 
