@@ -285,7 +285,7 @@ DEPENDENCIES
   cloudinary
   debug
   devise
-  font-awesome-sass (~> 6.1)
+  font-awesome-sass
   geocoder
   jbuilder
   jsbundling-rails
