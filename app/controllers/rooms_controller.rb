@@ -41,7 +41,10 @@ class RoomsController < ApplicationController
   end
 
   def show
-
+    @rooms = Room.all
+    @photos = @room.photos
+    @room = Room.find(params[:id])
+    @markers = [{ lat: @room.latitude, lng: @room.longitude, info_window: render_to_string(partial: "popup" )}]
   end
 
   def update

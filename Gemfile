@@ -31,9 +31,25 @@ gem "devise"
 
 gem "cloudinary"
 
-gem "dotenv-rails", groups: [:development, :test]
+# gem "dotenv-rails", groups: [:development, :test]
 
 gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
+
+
+gem "geocoder"
+
+gem "font-awesome-sass"
+
+gem 'turbolinks', '~> 5.2.0' #makes the pages faster
+
+
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", require: false
+
+
+
+
+
 
 
 
@@ -59,7 +75,7 @@ gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
 
 gem "autoprefixer-rails"
-gem "font-awesome-sass", "~> 6.1"
+
 gem "simple_form", github: "heartcombo/simple_form"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
