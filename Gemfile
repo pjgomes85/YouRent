@@ -35,6 +35,9 @@ gem "cloudinary"
 
 gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
 
+gem 'bootstrap', '~> 5.2.2'
+
+
 
 gem "geocoder"
 
@@ -43,8 +46,6 @@ gem "font-awesome-sass"
 gem 'turbolinks', '~> 5.2.0' #makes the pages faster
 
 
-# Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", require: false
 
 
 
