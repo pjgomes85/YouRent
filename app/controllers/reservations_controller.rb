@@ -4,11 +4,11 @@ class ReservationsController < ApplicationController
     room = Room.find(params[:room_id])
 
     if current_user == room.user
-       flash[:alert] = "You cannot book your own property!"
+      flash[:notice] = "You cannot book your own property!"
     else
-    start_date = Date.parse(reservation_params[:start_date])
-    end_date = Date.parse(reservation_params[:end_date])
-    days = (end_date - start_date).to_i + 1
+      start_date = Date.parse(reservation_params[:start_date])
+      end_date = Date.parse(reservation_params[:end_date])
+      days = (end_date - start_date).to_i + 1
 
     @reservation = current_user.reservations.build(reservation_params)
     @reservation.room = room
