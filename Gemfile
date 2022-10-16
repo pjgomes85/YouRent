@@ -43,7 +43,8 @@ gem "font-awesome-sass"
 gem 'turbolinks', '~> 5.2.0' #makes the pages faster
 
 
-
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", require: false
 
 
 
