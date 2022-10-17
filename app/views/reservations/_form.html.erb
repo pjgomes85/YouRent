@@ -1,4 +1,4 @@
-<%= simple_form_for([@room, @room.reservations.new]) do |f| %>
+<%= form_for([@room, @room.reservations.new])  do |f| %>
 
    <div class="booking-form booking">
     <form>
@@ -6,13 +6,13 @@
        <div class="col-sm-6">
           <div class="form-group">
             <span class="form-label check-in">CHECK-IN</span>
-              <input name="start_date" class="form-control" type="date" placeholder="check" required>      <%# <%= f.date_field :start_date, class: "form-control", type: "date" %>
+              <%= f.date_field :start_date, class: "form-control", type: "date" %>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="form-group">
             <span class="form-label check-out">CHECK-OUT</span>
-              <input name="end_date" class="form-control" type="date" required>       <%# <%= f.date_field :end_date, class: "form-control" %>
+              <%= f.date_field :end_date, class: "form-control" %>
           </div>
         </div>
       </div>

@@ -14,6 +14,7 @@ class ReservationsController < ApplicationController
     @reservation.room = room
     @reservation.price = room.price
     @reservation.total = room.price * days
+    @reservation.save
 
     flash[:notice] = "Booked Successfully"
     end
