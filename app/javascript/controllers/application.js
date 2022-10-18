@@ -9,5 +9,3 @@ window.Stimulus   = application
 
 export { application }
 
-
-toastr = require("toastr")
