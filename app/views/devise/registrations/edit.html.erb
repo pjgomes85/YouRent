@@ -22,7 +22,7 @@
                   input_html: { autocomplete: "name" }, placeholder: "Full Name", class: "form-control"%>
     </div>
 
-      <div>  <%= f.input :photo, as: :file, input_html: {data: {avatar_target: "file"}} %> </div>
+          <div> <% f.input :image, as: :file %> </div>
 
       <div>
         <%= f.input :phone_number, placeholder: "Phone Number", required: true, autofocus: true, class: "form-control" %>
