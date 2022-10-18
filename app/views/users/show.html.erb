@@ -10,9 +10,9 @@
 			<div class="panel-heading">Verification</div>
 			<div class="panel-body">
         <ul class="sidebar-list">
-          <% if @user.confirmation_token %>
+          <%# <% if @user.confirmation_token %>
         <li>Email: <span class="pull-right icon-babu"> <i class="fa fa-check-circle-o"></i></span></li>
-         <% end %>
+         <%# <% end %>
         <li>facebook:<span class="pull-right icon-babu"> <i class="fa fa-check-circle-o"></i></span></li>
         <li>Phone Number:<span class="pull-right icon-babu"> <i class="fa fa-check-circle-o"></i></span></li>
 			</div>
@@ -26,21 +26,21 @@
 			<%= @user.description %>
 		</div>
 
+
+
 		<h4>Listings (<%= @rooms.length %>)</h4><br>
 
 		<div class="row">
 
 			<% @rooms.each do |room| %>
 				<div class="col-md-4">
-					<div class="panel panel-default">
-						<%# <div class="panel-heading preview">
+						<div class="panel-heading preview">
 							<%= image_tag room.photos[0].image.url(:medium) %>
-						<%# </div> %>
+						</div>
 						<div class="panel-body">
 							<%= link_to room.listing_name, room %>
 						</div>
-					</div>
+          </div>
 				</div>
 			<% end %>
-
 		</div>
