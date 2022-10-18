@@ -29,9 +29,9 @@
                 <%= image_tag reservation.room.cover_photo(:thumb) %>
               <% end %>
             </div>
-            <span>
             <div class="col-md-8">
               <% link_to reservation.room.listing_name, room_path(reservation.room) %><br/><br/>
+            <span>
                 <%= link_to user_path(reservation.user) do %>
                   <%= image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %><br/>
                     <%= reservation.user.fullname %>
