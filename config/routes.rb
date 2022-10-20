@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     end
     resources :photos, only: %i[create destroy]
     resources :reservations, only: [:create]
+    resources :rooms do
+      resources :reviews, only: %i[create destroy]
+    end
   end
 
   get '/your_trips' => 'reservations#your_trips'
