@@ -1,2 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<% form_for search_path, method: :get do %>
+  <div class="row">
+    <div class="col-md-6">
+    <%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control" %>
+    </div>
+      <div class="col-md-3">
+      <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
+      </div>
+        <div class="col-md-6">
+        <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control datepicker" %>
+    </div>
+  </div>
+<% end %>
+
+    <div class="row">
+			<% @rooms.each do |room| %>
+				<div class="col-md-2">
+          <div class="panel panel-default">
+						<div class="panel-heading preview">
+							<%= image_tag room.cover_photo(:medium) %>
+						</div>
+						<div class="panel-body">
+							<%= link_to room.listing_name, room %>
+						</div>
+          </div>
+        </div>
+			<% end %>
+      </div>
+    </div>
