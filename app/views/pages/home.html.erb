@@ -1,9 +1,11 @@
 
-<%= form_tag search_path, method: :get do %>%
+<%= form_tag search_path, method: :get do |f| %>
   <div class="row">
     <div class="col-md-6">
-    <%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control" %>
+    <div class="search-bar"><i class="icon fa fa-search"></i><%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control input-text" %></div>
     </div>
+
+
       <div class="col-md-3">
       <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
       </div>
@@ -30,7 +32,7 @@
 				<div class="col-md-2">
           <div class="panel panel-default">
 						<div class="panel-heading preview">
-							<%# <%= image_tag room.cover_photo(:medium) %> %>
+							<%= image_tag room.cover_photo(:medium) %>
 						</div>
 						<div class="panel-body">
 							<%= link_to room.listing_name, room %>
@@ -40,3 +42,41 @@
 			<% end %>
       </div>
     </div>
+
+
+<script>
+// $('.search-bar .icon').on('click', function() {
+//   $(this).parent().toggleClass('active');
+// });
+</script>
+
+<style>
+.search-bar {
+  position: relative;
+}
+
+.search-bar.active .input-text {
+  max-width: 80%;
+  border: 1px solid #ccc;
+  background: #eee;
+}
+
+.search-bar .icon {
+  cursor: pointer;
+  position: absolute;
+  top: 47%;
+  left: 0;
+  transform: translateY(-50%);
+  padding: 13px 15px 13px 11px;
+}
+
+/* /* .search-bar .input-text {
+  max-width: 0;
+  border: 0;
+  border-color: #ccc;
+  height: 20px;
+  padding: 8px 6px 8px 35px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out; */
+} 
+</style>
