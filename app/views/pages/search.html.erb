@@ -5,7 +5,7 @@
   <br/>
   <div class="collapse" id="collapsePanel">
 
-    <%= search_form_for @search, url: search_path do %>
+    <%= search_form_for @search, url: search_path do |f| %>
 
         <div class="row">
           <div class="col-md-8">
@@ -68,12 +68,51 @@
       <hr/>
 
       <div class="row">
+        <div class="col-md-4">
+          <%= check_box_tag "q[is_tv_eq]", true %> TV
+        </div>
+        <div class="col-md-4">
+          <%= check_box_tag "q[is_kitchen_eq]", true %> Kitcheb
+        </div>
+        <div class="col-md-4">
+          <%= check_box_tag "q[is_internet_eq]", true %> Internet
+        </div>
+        <div class="col-md-4">
+          <%= check_box_tag "q[is_heating_eq]", true %> Heating
+        </div>
+        <div class="col-md-4">
+          <%= check_box_tag "q[is_air_eq]", true %> Air Condition
+        </div>
+      </div>
+      <hr/>
+
+      <div class="row text-center">
+        <%= f.submit "Search", class: "btn btn-form" %>
+      </div>
 
       <% end %>
 
     </div>
   </div>
 </div>
+
+
+
+  <div class="row">
+			<% @arrRooms.each do |room| %>
+				<div class="col-md-2">
+          <div class="panel panel-default">
+						<div class="panel-heading preview">
+							<%= image_tag room.cover_photo(:medium) %>
+						</div>
+						<div class="panel-body">
+							<%= link_to room.listing_name, room %>
+						</div>
+          </div>
+        </div>
+			<% end %>
+      </div>
+
 
 
 
