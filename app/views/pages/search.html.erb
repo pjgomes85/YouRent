@@ -31,7 +31,52 @@
         </div>
       </div>
       <hr/>
-  <% end %>  
+
+      <div class="row">
+        <div class="col-md-4">
+          <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
+        </div>
+        <div class="col-md-4">
+          <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Private
+        </div>
+        <div class="col-md-4">
+          <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Shared
+        </div>
+      </div>
+      <hr/>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group select">
+            <label>Accommodate</label>
+              <%= f.select :acommodate_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "acommodate", prompt: "Select...", class: "form-control"  %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group select">
+            <label>Bedrooms</label>
+              <%= f.select :bed_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bed_room", prompt: "Select...", class: "form-control"  %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group select">
+            <label>Bathrooms</label>
+               <%= f.select :bath_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bath_room", prompt: "Select...", class: "form-control"  %>
+          </div>
+        </div>
+      </div>
+      <hr/>
+
+      <div class="row">
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+
 
   <div id="right">
 
