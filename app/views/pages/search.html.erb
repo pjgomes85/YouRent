@@ -2,35 +2,35 @@
   <div id="left">
     <!-- Search panel -->
   <div class="row">
-  <br/>
-  <div class="collapse" id="collapsePanel">
+  
+  <div  id="collapsePanel">
 
     <%= search_form_for @search, url: search_path do |f| %>
 
-        <div class="row">
-          <div class="col-md-8">
-            <label>Price Range:</label>
-          </div>
+        <%# <div class="row"> %>
+          <%# <div class="col-md-2"> %>
+            <%# <label>Price Range:</label> %>
+          <%# </div> %>
 
-            <div class="col-md-2">
-              <label>Min Price</label>
-                <%= f.text_field :price_gteq, class: "form-control" %>
-            </div>
-              <label>Max Price</label>
-                <%= f.text_field :price_lteq, class: "form-control" %>
-            </div>
-          </div>
-          <hr/>
+            <%# <div class="col-md-2"> %>
+              <%# <label>Min Price</label> %>
+                <%# <%= f.text_field :price_gteq, class: "form-control" %>
 
-        <div class="row">
-          <div class="col-md-6">
-            <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>
-          </div>
-          <div class="col-md-6">
-            <%= text_field_tag :end_date, params[:end_date],readonly: true, placeholder: "End Date", class: "form-control datepicker" %>
-        </div>
-      </div>
-      <hr/>
+              <%# <label>Max Price</label> %>
+                <%# <%= f.text_field :price_lteq, class: "form-control" %>
+            <%# </div> %>
+          <%# <br/> %>
+          <%# <br/> %>
+
+        <%# <div class="row"> %>
+          <%# <div class="col-md-2"> %>
+            <%# <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>
+          <%# </div> %>
+          <%# <div class="col-md-2"> %>
+            <%# <%= text_field_tag :end_date, params[:end_date],readonly: true, placeholder: "End Date", class: "form-control datepicker" %>
+        <%# </div> %>
+      <%# </div> %>
+      <%# <hr/> %>
 
       <div class="row">
         <div class="col-md-4">
@@ -43,7 +43,7 @@
           <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Shared
         </div>
       </div>
-      <hr/>
+      <br/>
 
       <div class="row">
         <div class="col-md-4">
@@ -65,7 +65,7 @@
           </div>
         </div>
       </div>
-
+      <br/>
 
       <div class="row">
         <div class="col-md-4">
@@ -95,7 +95,7 @@
     </div>
   </div>
 </div>
-
+<br/>
 
 
   <div class="row">
@@ -117,25 +117,23 @@
 
 
 
+  <div id="right">
 
-
-
-
-    </div>
   </div>
-
 </div>
+
+
 <style>
 
 #main {
   height: 100%;
-  overflow: scroll;
+
   height: 100%;
 }
 
 #left {
   padding: 10px 400px 10px 20px;
-  overflow: scroll;
+
   height: 100%%
 }
 
