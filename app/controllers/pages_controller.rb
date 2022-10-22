@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   end
 
   def search
+    @rooms = Room.all
+
+
   	if params[:search].present? && params[:search].strip != ""
   		session[:loc_search] = params[:search]
   	end
@@ -20,6 +23,7 @@ class PagesController < ApplicationController
   	@rooms = @search.result
 
   	@arrRooms = @rooms.to_a
+
 
   	if (params[:start_date] && params[:end_date] && !params[:start_date].empty? & !params[:end_date].empty?)
 
