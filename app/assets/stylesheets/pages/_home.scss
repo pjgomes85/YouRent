@@ -9,7 +9,13 @@ body {
 }
 
 a {
-  color: #00A699;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff5a5e;
+  text-decoration: none;
 }
 
 .text-babu, .icon-babu {

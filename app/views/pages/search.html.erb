@@ -2,7 +2,7 @@
   <div id="left">
     <!-- Search panel -->
   <div class="row">
-  
+
   <div  id="collapsePanel">
 
     <%= search_form_for @search, url: search_path do |f| %>
@@ -32,18 +32,6 @@
       <%# </div> %>
       <%# <hr/> %>
 
-      <div class="row">
-        <div class="col-md-4">
-          <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
-        </div>
-        <div class="col-md-4">
-          <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Private
-        </div>
-        <div class="col-md-4">
-          <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Shared
-        </div>
-      </div>
-      <br/>
 
       <div class="row">
         <div class="col-md-4">
@@ -65,7 +53,20 @@
           </div>
         </div>
       </div>
-      <br/>
+      <hr/>
+
+      <div class="row">
+        <div class="col-md-4">
+          <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
+        </div>
+        <div class="col-md-4">
+          <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Private
+        </div>
+        <div class="col-md-4">
+          <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Shared
+        </div>
+      </div>
+      <hr/>
 
       <div class="row">
         <div class="col-md-4">
