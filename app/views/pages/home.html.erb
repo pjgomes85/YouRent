@@ -1,3 +1,11 @@
+<div class="row">
+  <div >
+    <h1><span class="text-red">PauloRents</span> Book unique homes and experience a city like a local one.</h1>
+  </div>
+</div>
+
+
+
 
 <%= form_tag search_path, method: :get do |f| %>
   <div class="row">
@@ -46,11 +54,46 @@
 
 
 
+
+
+
+
+
+
 <script>
 // $('.search-bar .icon').on('click', function() {
 //   $(this).parent().toggleClass('active');
 // });
 </script>
+
+
+<!-- Cities ---->
+<div><h3>Cities</h3></div>
+<br/>
+
+<div class="row">
+  <div class="col-md-3 col-sm-12">
+    <a href="http://localhost:3000/search?search=london" class="href">
+      <div class="discovery-card" style="background-image: url('/assests/LD.jpg')"></div>
+    </a>
+  </div>
+
+  <div class="col-md-3 col-sm-12">
+    <a href="http://localhost:3000/search?search=Lisbon" class="href">
+      <div class="discovery-card" style="background-image: url('/assests/LD.jpg')"></div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <a href="http://localhost:3000/search?search=Paris" class="href">
+      <div class="discovery-card" style="background-image: url('/assests/LD.jpg')"></div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <a href="http://localhost:3000/search?search=Miami" class="href">
+      <div class="discovery-card" style="background-image: url('/assests/LD.jpg')"></div>
+    </a>
+  </div>
+</div>
 
 <style>
 .search-bar {
