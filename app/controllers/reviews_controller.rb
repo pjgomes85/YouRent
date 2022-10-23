@@ -1,9 +1,9 @@
-
 class ReviewsController < ApplicationController
   def create
     @room = Room.find(params[:restaurant_id])
     @review = Review.new(review_params)
     @review.room = @room
+    raise
     if @review.save
       redirect_to room
 
