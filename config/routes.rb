@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :rooms, except: [:edit] do
-    resources :reviews, only: :create
+
     member do
       get 'listing'
       get 'pricing'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       get 'amenities'
       get 'location'
     end
-
+    resources :reviews, only: :create
     resources :photos, only: %i[create destroy]
     resources :reservations, only: [:create]
   end

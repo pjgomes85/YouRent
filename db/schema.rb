@@ -70,12 +70,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_081914) do
     t.text "comment"
     t.integer "star", default: 1
     t.bigint "room_id", null: false
-    t.bigint "reservation_id", null: false
-    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.index ["reservation_id"], name: "index_reviews_on_reservation_id"
     t.index ["room_id"], name: "index_reviews_on_room_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -132,7 +129,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_081914) do
   add_foreign_key "photos", "rooms"
   add_foreign_key "reservations", "rooms"
   add_foreign_key "reservations", "users"
-  add_foreign_key "reviews", "reservations"
   add_foreign_key "reviews", "rooms"
   add_foreign_key "reviews", "users"
   add_foreign_key "rooms", "users"

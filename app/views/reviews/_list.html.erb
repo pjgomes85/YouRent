@@ -1,30 +1,32 @@
-<h1><%= @room.home_type %> <small><%= @room.address %></small></h1>
 
-<h2><%= pluralize @room.reviews.size, "review" %></h2>
+<% if @reviews.count == 0 %>
+	<div class="text-center"><h4>There is no Review yet</h4></div>
+<% else %>
+	<% @reviews.order("id desc").each do |r| %>
+		<hr>
 
-<div>
-  <% if @room.reviews.blank? %>
-    Be the first to leave a review for <%= @room.home_type %>
-  <% else %>
-    <% @room.reviews.each do |review| %>
-      <p><%= review.comment %></p>
-    <% end %>
-  <% end %>
-</div>
-
-
-
-		<!-- Reviews -->
 		<div class="row">
-			<div class="col-md-12">
-				<h3>Reviews <span id="average_rating"></span> (<%= @reviews %>)</h3>
-				<div class="container">
-					<div>
-						<%= render 'reviews/form' if @booked && !@hasReview %>
-					</div>
-					<div>
-						<%= render 'reviews/list' %>
-					</div>
+			<div class="col-md-1">
+				<%= image_tag avatar_url(r.user), class: "img-circle avatar-medium" %>
+			</div>
+			<div class="col-md-11">
+				<div>
+					<strong><%= r.user.fullname %> <div id="stars_<%= r.id %>"></div> </strong>
+
 				</div>
+
+				<div><%= r.created_at.strftime("%v") %></div>
+				<div><%= r.comment %></div>
 			</div>
 		</div>
+
+		<script>
+			$('#stars_<%= r.id %>').raty({
+				path: '/assets',
+				readOnly: true,
+				score: <%= r.star %>
+			});
+		</script>
+
+	<% end %>
+<% end %>

@@ -45,7 +45,8 @@ class RoomsController < ApplicationController
     @photos = @room.photos
     @room = Room.find(params[:id])
     @markers = [{ lat: @room.latitude, lng: @room.longitude, info_window: render_to_string(partial: "popup" )}]
-    @review = Review.new
+    @reviews = @room.reviews
+    @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
   end
 
   def update

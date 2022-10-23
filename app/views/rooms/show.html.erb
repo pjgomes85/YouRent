@@ -132,28 +132,23 @@
 
     <!----- Right Panel -------->
       <div class="col-md-4">
-          		<!-- Reviews -->
-          <%= simple_form_for([@room, @review]) do |f| %>
-            <%= f.input :comment %>
-            <%= f.button :submit %>
-          <% end %>
+        <%=  render "reservations/form" %>
+      </div>
 
-              <%=  render "reservations/form" %>
-            </div>
-
-            <h1><%= @room.home_type %> <small><%= @room.address %></small></h1>
-
-<h2><%= pluralize @room.reviews.size, "review" %></h2>
-
-<div>
-  <% if @room.reviews.blank? %>
-    Be the first to leave a review for <%= @room.home_type %>
-  <% else %>
-    <% @room.reviews.each do |review| %>
-      <p><%= review.comment %></p>
-    <% end %>
-  <% end %>
-</div>
+<!-- Reviews -->
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h3>
+				<div class="container">
+					<div>
+						<%= render 'reviews/form'%>
+					</div>
+					<div>
+						<%= render 'reviews/list' %>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
     <!----- MAPBOX --------->
