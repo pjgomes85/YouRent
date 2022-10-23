@@ -9,21 +9,22 @@
 
 <%= form_tag search_path, method: :get do |f| %>
   <div class="row">
-    <div class="col-md-6">
-    <div class="search-bar"><i class="icon fa fa-search"></i><%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control input-text" %></div>
-    </div>
-
-
-      <div class="col-md-3">
-      <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
+      <div class="col-md-6">
+        <div class="search-bar"><i class="icon fa fa-search"></i><%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control input-text" %></div>
       </div>
-        <div class="col-md-3">
-        <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control datepicker" %>
-    </div>
-  </div>
+      <div class="col-md-3">
+      <%= submit_tag "Search", class: "form-control btn btn-normal btn-block" %>
+      </div>
+      <%# <div class="col-md-3"> %>
+      <%# <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
+      <%# </div> %>
+        <%# <div class="col-md-3"> %>
+        <%# <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control datepicker" %>
+    <%# </div> %>
+  <%# </div> %>
   <br/><br/>
 
-  <div class="row">
+  <%# <div class="row">
     <div class="col-md-offset-4 col-md-4">
       <%= submit_tag "Search", class: "btn btn-normal btn-block" %>
     </div>
