@@ -22,6 +22,7 @@ class RoomsController < ApplicationController
   end
 
   def listing
+
   end
 
   def pricing
@@ -38,6 +39,7 @@ class RoomsController < ApplicationController
   end
 
   def location
+
   end
 
   def show
