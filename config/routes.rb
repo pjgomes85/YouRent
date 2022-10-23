@@ -14,9 +14,8 @@ Rails.application.routes.draw do
       get 'location'
     end
     resources :photos, only: %i[create destroy]
-    resources :reservations, only: [:create]
-    resources :rooms do
-      resources :reviews, only: %i[create destroy]
+    resources :reservations, only: [:create] do
+      resources :reviews, only: :create
     end
   end
 

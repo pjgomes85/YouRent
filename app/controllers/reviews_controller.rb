@@ -1,19 +1,20 @@
+
 class ReviewsController < ApplicationController
-	def create
-		@review = current_user.reviews.create(review_params)
-		redirect_to @review.room
-	end
+  def create
+    @room = Room.find(params[:restaurant_id])
+    @review = Review.new(review_params)
+    @review.room = @room
+    if @review.save
+      redirect_to room
 
-	def destroy
-		@review = Review.find(params[:id])
-		room = @review.room
-		@review.destroy
+    else
+      render "restaurants/show", status: :unprocessable_entity
+    end
+  end
 
-		redirect_to room
-	end
+  private
 
-	private
-		def review_params
-			params.require(:review).permit(:comment, :star, :room_id)
-		end
+  def review_params
+    params.require(:review).permit(:comment)
+  end
 end

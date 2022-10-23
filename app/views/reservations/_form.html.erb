@@ -1,7 +1,7 @@
 <%= form_for([@room, @room.reservations.new])  do |f| %>
 
    <div class="booking-form booking">
-      <div class="price">£<%= @room.price %> night <span id="average_rating"></span><h3 class="pull-right"><i class="fa-solid fa-star"></i> (<%= @reviews.count %>)</h3> </div>
+      <div class="price">£<%= @room.price %> night <span id="average_rating"></span><h3 class="pull-right"><i class="fa-solid fa-star"></i>  </div>
       <form>
         <div class="row">
         <div class="col-sm-6">
@@ -32,19 +32,3 @@
   font-size: 20px;
 }
 </style>
-
-
-		<!-- Reviews -->
-		<div class="row">
-			<div class="col-md-12">
-				<h3>Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h3>
-				<div class="container">
-					<div>
-						<%= render 'reviews/form' if @booked && !@hasReview %>
-					</div>
-					<div>
-						<%= render 'reviews/list' %>
-					</div>
-				</div>
-			</div>
-		</div>
