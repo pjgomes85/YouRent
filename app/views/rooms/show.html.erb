@@ -124,9 +124,10 @@
         </div>
          <% end %>
         </div>
-
       <hr/>
     </div>
+
+
 
 
 
@@ -135,20 +136,21 @@
         <%=  render "reservations/form" %>
       </div>
 
-<!-- Reviews -->
-		<div class="row">
-			<div class="col-md-12">
+      <!-- Reviews -->
+		<div class="booking-form booking">
+			<div class="col-md-8">
 				<h3>Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h3>
-				<div class="container">
+				<div class="form-group">
 					<div>
-						<%= render 'reviews/form'%>
+            <%= render 'reviews/list' %>
 					</div>
+            <%= render 'reviews/form'%>
 					<div>
-						<%= render 'reviews/list' %>
 					</div>
 				</div>
 			</div>
 		</div>
+
 
 
     <!----- MAPBOX --------->
@@ -162,3 +164,19 @@
 
 
 </div>
+
+<script>
+	$('#average_rating').raty({
+		path: '/assets',
+		readOnly: true,
+		score: <%= @room.average_rating %>
+	});
+</script>
+
+
+<style>
+.reviews {
+
+  right: 5px;
+}
+</style>
