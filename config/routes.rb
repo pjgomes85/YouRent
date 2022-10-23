@@ -3,12 +3,10 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :users, only: [:show]
-  resources :rooms, only: [ :index, :show ] do
-    resources :reviews, only: :create
-  end
 
 
   resources :rooms, except: [:edit] do
+    resources :reviews, only: :create
     member do
       get 'listing'
       get 'pricing'
@@ -17,6 +15,7 @@ Rails.application.routes.draw do
       get 'amenities'
       get 'location'
     end
+
     resources :photos, only: %i[create destroy]
     resources :reservations, only: [:create]
   end
@@ -24,5 +23,5 @@ Rails.application.routes.draw do
   get '/your_trips' => 'reservations#your_trips'
   get '/your_reservations' => 'reservations#your_reservations'
 
-  get 'search' => 'pages#search'
+  # get 'search' => 'pages#search'
 end
