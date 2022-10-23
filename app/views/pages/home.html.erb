@@ -23,76 +23,86 @@
     <%# </div> %>
   <%# </div> %>
   <br/><br/>
-  <%# <div class="row">
+
+  <div class="row">
     <div class="col-md-offset-4 col-md-4">
-      <%= submit_tag "Search", class: "btn btn-normal btn-block" %>
+
     </div>
   </div>
 <% end %>
 
 <br/><hr/><br/>
 
-<!-- HOMES ---->
-<div><h3>HOMES</h3></div>
+<div class="text-center">
+	<h2>Just for the weekend</h2>
+	<p>Discover new, inspiring places close to home.</p>
+</div>
 
-    <div class="row">
-			<% @rooms.each do |room| %>
-				<div class="col-md-2">
-          <div class="panel panel-default">
-						<div class="panel-heading preview">
-							<%= image_tag room.cover_photo(:medium) %>
-						</div>
-						<div class="panel-body">
-							<%= link_to room.listing_name, room %>
-						</div>
-          </div>
-        </div>
-			<% end %>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-<script>
-// $('.search-bar .icon').on('click', function() {
-//   $(this).parent().toggleClass('active');
-// });
-</script>
-
-
-<!-- Cities ---->
-<div><h3>Cities</h3></div>
-<br/>
+<br>
 
 <div class="row">
-  <div class="col-md-3 col-sm-12">
-    <a href="http://localhost:3000/search?search=london" class="href">
-      <div class="discovery-card" style="background-image: url('/assests/LD.jpg')"></div>
-    </a>
-  </div>
+	<div class="col-md-4 col-sm-12">
+		<a href="http://localhost:3000/search?utf8=%E2%9C%93&search=new+york">
+			<div class="discovery-card" style="background-image: url('/assets/New_York.jpg')">
+				<div class="va-container">
+					<div class="va-middle text-center">
+						<h2><strong>New York</strong></h2>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
 
-  <div class="col-md-3 col-sm-12">
-    <a href="http://localhost:3000/search?search=Lisbon" class="href">
-      <div class="discovery-card" style="background-image: url('/assests/LD.jpg')"></div>
-    </a>
-  </div>
-  <div class="col-md-3 col-sm-12">
-    <a href="http://localhost:3000/search?search=Paris" class="href">
-      <div class="discovery-card" style="background-image: url('/assests/LD.jpg')"></div>
-    </a>
-  </div>
-  <div class="col-md-3 col-sm-12">
-    <a href="http://localhost:3000/search?search=Miami" class="href">
-      <div class="discovery-card" style="background-image: url('/assests/LD.jpg')"></div>
-    </a>
-  </div>
+	<div class="col-md-4 col-sm-6">
+		<a href="http://localhost:3000/search?utf8=%E2%9C%93&search=london">
+			<div class="discovery-card" style="background-image: url('/assets/London.jpg')">
+				<div class="va-container">
+					<div class="va-middle text-center">
+						<h2><strong>London</strong></h2>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="col-md-4 col-sm-6">
+		<a href="http://localhost:3000/search?utf8=%E2%9C%93&search=berlin">
+			<div class="discovery-card" style="background-image: url('/assets/Berlin.jpg')">
+				<div class="va-container">
+					<div class="va-middle text-center">
+						<h2><strong>Berlin</strong></h2>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+<br>
+
+<div class="text-center">
+	<h2>Explore the world</h2>
+	<p>See what peopel are travelling, all around the world.</p>
+</div>
+
+<br>
+
+<div class="row">
+	<% @rooms.each do |room| %>
+
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading preview">
+					<%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+				</div>
+				<div class="panel-body">
+					<%= image_tag avatar_url(room.user), class: "img-circle avatar-small" %>&nbsp;
+					<%= link_to room.listing_name, room %>
+				</div>
+			</div>
+		</div>
+
+	<% end %>
 </div>
 
 <style>
