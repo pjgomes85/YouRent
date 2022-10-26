@@ -2,18 +2,18 @@
   <br/><br/>
 
   <div class="row">
-    <% @room.photos.each do |photo| %>
+    <% @photos.each do |photo| %>
       <div class="col-sm-4">
       <div class="panel panel-default">
         <div class="card" >
-          <%= cl_image_tag photo.key, class: "card-img-top" %>
+          <%= image_tag photo.image.url(), class: "card-img-top" %>
 
 
           <div class="card-body">
               <span class="pull-right">
-                <%# <%= link_to room_photo_path(photo.room_id, photo), remote: true, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do  %> 
+                <%= link_to room_photo_path(photo.room_id, photo), remote: true, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do  %>
                   <i class="fa-solid fa-trash-can"></i>
-                 <%# <% end %>
+                 <% end %>
             </span>
             </div>
           </div>

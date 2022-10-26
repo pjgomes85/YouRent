@@ -38,7 +38,7 @@ gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
 gem 'bootstrap', '~> 5.2.2'
 
 
-gem "dotenv-rails", groups: [:development, :test] 
+gem "dotenv-rails", groups: [:development, :test]
 
 
 gem "geocoder"
