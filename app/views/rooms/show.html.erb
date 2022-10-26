@@ -1,8 +1,11 @@
+<% @room.photos.each do |photo| %>
+
 <div class="row">
       <div class="col-md-12">
-        <%= cl_image_tag @room.photo.key, width: 1000, height: 400, crop: :fill %>
+        <%= cl_image_tag photo.key, width: 1000, height: 400, crop: :fill %>
       </div>
      </div>
+     <% end %>
     <br/>
 
 
@@ -105,9 +108,9 @@
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner item">
-            <% @photos.each do |photo| %>
+            <% @room.photos.each do |photo| %>
               <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-                <%= image_tag photo.image.url(), class: "carousel-img" %>
+                <%= cl_image_tag photo.key, class: "carousel-img" %>
               </div>
             <% end %>
           </div>
