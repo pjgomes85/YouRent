@@ -1,6 +1,3 @@
-<% @room.photos.last do |photo| %>
-<div id="content"><%= cl_image_tag @room.photos.last.key,  width: 150, height: 150, crop: :thumb %></div></div>
-<% end %>
-
-
-<%= cl_image_tag @room.photos.first.key,  width: 150, height: 150, crop: :thumb %></div>
+<%# <% @room.photos.first do |photo| %>
+<div id="content"><%= cl_image_tag @room.photos.first.key,  width: 150, height: 150, crop: :thumb %></div></div>
+<%# <% end %>
