@@ -1,11 +1,8 @@
-<% @room.photos.each do |photo| %>
-
 <div class="row">
       <div class="col-md-12">
-        <%= cl_image_tag photo.key, width: 1000, height: 400, crop: :fill %>
+        <%# <%= image_tag @room.cover_photo(nil), width: 1000, height: 400, crop: :fill %> %>
       </div>
      </div>
-     <% end %>
     <br/>
 
 
@@ -97,11 +94,11 @@
     <!---- Carousel ------->
       <div class="row">
 
-        <% if @photos.length > 0 %>
+        <% if @room.photos.length > 0 %>
          <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
              <ol class="carousel-indicators">
-              <% @photos.each do |photo| %>
+              <% @room.photos.each do |photo| %>
               <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
               <% end %>
             </ol>
@@ -185,10 +182,3 @@
   right: 5px;
 }
 </style>
-
-    <% @photos.each do |photo| %>
-      <div class="col-sm-4">
-      <div class="panel panel-default">
-        <div class="card" >
-          <%= cl_image_tag photo.key, class: "card-img-top" %>
-          <% end %>
