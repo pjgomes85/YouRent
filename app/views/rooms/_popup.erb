@@ -1,1 +1,2 @@
-<%# <div id="content"><%= image_tag @room.cover_photo(:thumb) %></div> %>
+<% @room.photos.each do |photo| %>
+<div id="content"><%= cl_image_tag photo.key(:thumb) %></div>

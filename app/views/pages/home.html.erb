@@ -88,21 +88,21 @@
 <br>
 
 <div class="row">
-	<% @rooms.each do |room| %>
+	<%# <% @rooms.each do |room| %>
 
 		<div class="col-md-4">
 			<div class="panel panel-default">
 				<div class="panel-heading preview">
-					<%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+					<%# <%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
 				</div>
 				<div class="panel-body">
-					<%= image_tag avatar_url(room.user), class: "img-circle avatar-small" %>&nbsp;
-					<%= link_to room.listing_name, room %>
+					<%# <%= image_tag avatar_url(room.user), class: "img-circle avatar-small" %>&nbsp;
+					<%# <%= link_to room.listing_name, room %>
 				</div>
 			</div>
 		</div>
 
-	<% end %>
+	<%# <% end %>
 </div>
 
 <style>

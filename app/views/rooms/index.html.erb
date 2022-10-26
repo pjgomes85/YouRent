@@ -17,10 +17,10 @@
     </div>
     <br/>
     <div class="panel-body">
-      <% @rooms.photos.each do |room| %>
+      <% @rooms.each do |room| %>
         <div class="row">
           <div class="col-md-2">
-          <%= image_tag room.cover_photo(:thumb), height: 60, width: 60 %>
+          <%# <%= image_tag room.cover_photo(:thumb), height: 60, width: 60 %>
           </div>
 
           <div class="col-md-7">
@@ -28,7 +28,7 @@
           </div>
 
           <div class="col-md-3 right">
-            <%= link_to "Update",listing_room_path(room), class: "btn btn-form listing" %>
+            <%# <%= link_to "Update",listing_room_path(room), class: "btn btn-form listing" %>
           </div>
         </div>
         <hr/>

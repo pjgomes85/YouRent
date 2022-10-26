@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = current_user.rooms
+    
   end
 
   def new
@@ -32,7 +33,7 @@ class RoomsController < ApplicationController
   end
 
   def photo_upload
-    @photos = @room.photos
+    # @photos = @room.photos
   end
 
   def amenities
