@@ -16,12 +16,14 @@
           <div class="row">
             <div class="col-md-offset-3 col-md-6">
 
-              <%= form_for @room, url: room_photos_path(@room), method: 'post', html: { multipart: true }, required: true  do |f| %>
+
+
+              <%= simple_form_for(@room) do |f| %>
                 <div class="row">
                 <div class="text-center">
                   <div class="image-form">
                     <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-                     <p><%= file_field_tag "images[]", type: :file, multiple: true %></p>
+                     <p><%= f.input :photos, as: :file, input_html: { multiple: true } %></p>
                     </span>
 
                   </div>
@@ -30,7 +32,7 @@
 
 
                 <div class="text-center">
-                <%= f.submit "Add Photos", class: "btn btn-form" %>
+                <%= f.submit "Submit", class: "btn btn-form" %>
                 </div>
 
               <% end %>
@@ -38,7 +40,7 @@
 
 
           <div>
-        </div id="photos"><%= render 'photos/photos_list' %></div>
+         </div id="photos"><%= render 'photos/photos_list' %></div>
       </div>
 
     </div>

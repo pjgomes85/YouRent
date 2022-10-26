@@ -94,18 +94,18 @@
     <!---- Carousel ------->
       <div class="row">
 
-        <% if @photos.length > 0 %>
+        <% if @room.photos.length > 0 %>
          <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
              <ol class="carousel-indicators">
-              <% @photos.each do |photo| %>
+              <% @room.photos.each do |photo| %>
               <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
               <% end %>
             </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner item">
-            <% @photos.each do |photo| %>
+            <% @room.photos.each do |photo| %>
               <div class="item <%= 'active' if photo.id == @photos[0].id %>">
                 <%= image_tag photo.image.url(), class: "carousel-img" %>
               </div>

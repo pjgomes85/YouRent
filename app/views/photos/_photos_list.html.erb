@@ -1,19 +1,19 @@
-<% if @photos.count > 0 %>
+<% if @room.photos.count > 0 %>
   <br/><br/>
 
   <div class="row">
-    <% @photos.each do |photo| %>
+    <%  @room.photos.each do |img| %>
       <div class="col-sm-4">
       <div class="panel panel-default">
         <div class="card" >
-          <%= image_tag photo.image.url(), class: "card-img-top" %>
+          <%= cl_image_tag img.key, class: "card-img-top" %>
 
 
           <div class="card-body">
               <span class="pull-right">
-                <%= link_to room_photo_path(photo.room_id, photo), remote: true, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do  %>
+                <%# <%= link_to room_photo_path(photo.room_id, photo), remote: true, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do  %> 
                   <i class="fa-solid fa-trash-can"></i>
-                 <% end %>
+                 <%# <% end %>
             </span>
             </div>
           </div>
