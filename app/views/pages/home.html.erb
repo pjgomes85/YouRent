@@ -88,12 +88,12 @@
 <br>
 
 <div class="row">
-	<% @room.photos.first do |room| %>
+	<% @rooms.each do |room| %>
 
 		<div class="col-md-4">
 			<div class="panel panel-default">
 				<div class="panel-heading preview">
-					<%= cl_image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+					<%# <%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
 				</div>
 				<div class="panel-body">
 					<%= image_tag avatar_url(room.user), class: "img-circle avatar-small" %>&nbsp;
