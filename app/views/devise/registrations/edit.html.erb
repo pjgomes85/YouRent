@@ -16,6 +16,9 @@
     <%= f.error_notification %>
 
     <div class="form-group">
+
+      <%= f.input :avatar, as: :file %>
+
       <%= f.input :fullname,
                   required: true,
                   autofocus: true,

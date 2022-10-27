@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :rooms
   has_many :reservations
   has_many :reviews
-  has_one_attached :photo
+  has_one_attached :avatar
 end
