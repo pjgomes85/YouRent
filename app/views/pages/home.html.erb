@@ -96,11 +96,11 @@
 					<%= cl_image_tag room.photos[0].key, width: 400, height: 300, crop: :fill if room.photos.length > 0 %>
 				</div>
 				<div class="panel-body">
-          <% if current_user.avatar.attached? %>
-            <%= cl_image_tag avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <% else %>
+          <%# <% if @user.avatar.attached? %> 
+            <%# <%= cl_image_tag avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%# <% else %>
                <%= image_tag avatar_url1(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-               <% end %>
+               <%# <% end %>
 					<%= link_to room.listing_name, room %>
 				</div>
 			</div>
