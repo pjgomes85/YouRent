@@ -104,7 +104,7 @@
 				<div class="col-md-2">
           <div class="panel panel-default">
 						<div class="panel-heading preview">
-							<%= image_tag room.cover_photo(:medium) %>
+							<%= cl_image_tag room.cover_photo, width: 150, height: 150, crop: :fill %>
 						</div>
 						<div class="panel-body">
 							<%= link_to room.listing_name, room %>
