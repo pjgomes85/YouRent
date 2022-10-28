@@ -21,7 +21,7 @@
             <%= @room.address %>
           </div>
           <div class="col-md-4 text center">
-            <%= image_tag avatar_url(@room.user), class: "img-circle avatar-medium" %><br/><%= @room.user.fullname %></p><br/>
+            <%= cl_image_tag avatar_url(@room.user), class: "img-circle avatar-medium" %><br/><%= @room.user.fullname %></p><br/>
           </div>
         </div>
         <hr/>
