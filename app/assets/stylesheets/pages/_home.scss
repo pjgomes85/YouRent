@@ -9,7 +9,13 @@ body {
 }
 
 a {
-  color: #00A699;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff5a5e;
+  text-decoration: none;
 }
 
 .text-babu, .icon-babu {
@@ -17,7 +23,7 @@ a {
 }
 
 
-.card {
+.cardcss {
   border-radius: 15px !important;
   width: 70%;
   height: 80%;
@@ -38,3 +44,56 @@ a {
   height: 100% !important;
   object-fit: cover;
 }
+
+
+//---Discovery-card---//
+.search-bar {
+  position: relative;
+}
+
+.search-bar.active .input-text {
+  max-width: 80%;
+  border: 1px solid #ccc;
+  background: #eee;
+}
+
+.search-bar .icon {
+  cursor: pointer;
+  position: absolute;
+  top: 47%;
+  left: 0;
+  transform: translateY(-50%);
+  padding: 13px 15px 13px 11px;
+}
+
+.text-red, .icon-red {
+  color: #ff5a5e;
+}
+
+.discovery-card {
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center;
+  height: 326px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/47/New_york_times_square-terabass.jpg");
+  transition: transform .2s;
+}
+
+
+.discovery-card:hover {
+  transform: scale(1.1);
+}
+
+.banner {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* /* .search-bar .input-text {
+  max-width: 0;
+  border: 0;
+  border-color: #ccc;
+  height: 20px;
+  padding: 8px 6px 8px 35px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out; */

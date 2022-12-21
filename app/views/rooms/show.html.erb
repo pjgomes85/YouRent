@@ -1,9 +1,11 @@
 <div class="row">
+
       <div class="col-md-12">
-        <%= image_tag @room.cover_photo(nil), width: 650, height: 400, crop: :fill %>
+         <%= cl_image_tag @room.photos.first.key, width: 1000, height: 400 %>
       </div>
      </div>
     <br/>
+
 
 
       <div class="row">
@@ -19,8 +21,7 @@
             <%= @room.address %>
           </div>
           <div class="col-md-4 text center">
-            <%= image_tag avatar_url(@room.user), class: "img-circle avatar-medium" %><br/><br/>
-            <%= @room.user.fullname %></p>
+            <%= cl_image_tag avatar_url(@room.user), class: "img-circle avatar-medium" %><br/><%= @room.user.fullname %></p><br/>
           </div>
         </div>
         <hr/>
@@ -94,20 +95,20 @@
     <!---- Carousel ------->
       <div class="row">
 
-        <% if @photos.length > 0 %>
-          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <% if @room.photos.length > 0 %>
+         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <% @photos.each do |photo| %>
+             <ol class="carousel-indicators">
+              <% @room.photos.each do |photo| %>
               <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
               <% end %>
             </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner item">
-            <% @photos.each do |photo| %>
+            <% @room.photos.each do |photo| %>
               <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-                <%= image_tag photo.image.url(), class: "carousel-img" %>
+                <%= cl_image_tag photo.key, class: "carousel-img" %>
               </div>
             <% end %>
           </div>
@@ -122,18 +123,38 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-
-        <% end %>
-
+         <% end %>
         </div>
       <hr/>
     </div>
 
-        <!----- Right Panel -------->
-      <div class="col-md-4">
 
-              <%=  render "reservations/form" %>
-            </div>
+
+
+
+    <!----- Right Panel -------->
+      <div class="col-md-4">
+        <%=  render "reservations/form" %>
+      </div>
+
+      <!-- Reviews -->
+      <div class="row">
+		<div class="booking-form booking">
+			<div class="col-md-8">
+				<h3>Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h3>
+				<div class="form-group">
+					<div>
+            <%= render 'reviews/list' %>
+					</div>
+            <%= render 'reviews/form'%>
+					<div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+
+
 
     <!----- MAPBOX --------->
     <div class="row">
@@ -145,24 +166,20 @@
     </div>
 
 
-
-
 </div>
 
-<%#
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
-<div id='map' style='width: 400px; height: 300px;'></div>
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoicGpnb21lczg1IiwiYSI6ImNsOThmMmRqcTJveGczdXFtYmlvN20wOTkifQ.5CPwS5icDdvRiIa01SAbeA';
-const map = new mapboxgl.Map({
-container: 'map', // container ID
-style: 'mapbox://styles/mapbox/streets-v11', // style URL
-center: [-74.5, 40], // starting position [lng, lat]
-zoom: 9, // starting zoom
-projection: 'globe' // display the map as a 3D globe
-});
-map.on('style.load', () => {
-map.setFog({}); // Set the default atmosphere style
-});
-</script> %>
+	$('#average_rating').raty({
+		path: '/assets',
+		readOnly: true,
+		score: <%= @room.average_rating %>
+	});
+</script>
+
+
+<style>
+.reviews {
+
+  right: 5px;
+}
+</style>

@@ -5,6 +5,8 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = current_user.rooms
+    @rooms = Room.all
+
   end
 
   def new
@@ -22,6 +24,7 @@ class RoomsController < ApplicationController
   end
 
   def listing
+
   end
 
   def pricing
@@ -31,13 +34,14 @@ class RoomsController < ApplicationController
   end
 
   def photo_upload
-    @photos = @room.photos
+    # @photos = @room.photos
   end
 
   def amenities
   end
 
   def location
+
   end
 
   def show
@@ -45,6 +49,8 @@ class RoomsController < ApplicationController
     @photos = @room.photos
     @room = Room.find(params[:id])
     @markers = [{ lat: @room.latitude, lng: @room.longitude, info_window: render_to_string(partial: "popup" )}]
+    @reviews = @room.reviews
+    @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
   end
 
   def update

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_16_074844) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_20_081914) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,6 +66,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_16_074844) do
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.integer "star", default: 1
+    t.bigint "room_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["room_id"], name: "index_reviews_on_room_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "rooms", force: :cascade do |t|
     t.string "home_type"
     t.string "room_type"
@@ -107,6 +118,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_16_074844) do
     t.string "phone_number"
     t.text "description"
     t.string "image"
+    t.string "img_url"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -117,5 +129,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_16_074844) do
   add_foreign_key "photos", "rooms"
   add_foreign_key "reservations", "rooms"
   add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "rooms"
+  add_foreign_key "reviews", "users"
   add_foreign_key "rooms", "users"
 end

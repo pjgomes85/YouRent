@@ -18,7 +18,7 @@ gem "puma", "~> 5.0"
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
 
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+# Hotwire's SP-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
@@ -35,22 +35,22 @@ gem "cloudinary"
 
 gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
 
+gem 'bootstrap', '~> 5.2.2'
+
+
+gem "dotenv-rails", groups: [:development, :test]
+
 
 gem "geocoder"
 
 gem "font-awesome-sass"
 
-gem 'turbolinks', '~> 5.2.0' #makes the pages faster
+# gem 'turbolinks', '~> 5.2.0' #makes the pages faster
+
+gem 'sprockets', '~> 4.0'
 
 
-# Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", require: false
-
-
-
-
-
-
+gem 'ransack'
 
 
 # Use Redis adapter to run Action Cable in production
