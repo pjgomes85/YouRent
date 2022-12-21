@@ -71,15 +71,17 @@ a:hover {
 }
 
 .discovery-card {
+  justify-content: space-between;
   background-size: cover;
   background-position: center;
   height: 326px;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/47/New_york_times_square-terabass.jpg");
+  transition: transform .2s;
 }
 
 
 .discovery-card:hover {
-  opacity: 0.3;
+  transform: scale(1.1);
 }
 
 .banner {
