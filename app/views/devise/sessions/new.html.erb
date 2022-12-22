@@ -12,10 +12,8 @@
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-          <form style="width: 23rem;">
-            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
-
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"></h3>
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
 
             <div class="form-outline mb-4">
             <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
@@ -32,10 +30,8 @@
                 required: false,
                 input_html: { autocomplete: "current-password" }, placeholder: "Password", class: "form-control form-control-lg" %>
               <label class="form-label" for="form2Example28"></label>
-            <% if devise_mapping.rememberable? %>
-              <%= f.check_box :remember_me %> Remember Me
-              <% end %>
             </div>
+
 
 
             <div class="pt-1 mb-4">
@@ -45,8 +41,8 @@
             <%= link_to "Forgot Password?", new_user_password_path, class: "small mb-5 pb-lg-2" %>
             <p>Don't have an account? <%= link_to "Register Here",  new_user_registration_path, class: "link-info" %></p>
 
-          </form>
         <% end %>
+
         </div>
 
       </div>
