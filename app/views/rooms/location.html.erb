@@ -12,12 +12,12 @@
 
       <div class="panel-body">
         <div class="container">
-          <%= form_for @room do |f| %>
+          <%= simple_form_for @room do |f| %>
 
             <div class="row">
               <div class="form-group">
-                  <label>Address</label>
-                    <%= f.text_field :address,  placeholder: "17 Liverpool St", class: "form-control", required: true %>
+                  <label></label>
+                    <%= f.input :address, placeholder: "17 Liverpool St", class: "form-control", required: true %>
               </div>
             </div>
 
