@@ -48,14 +48,15 @@ class RoomsController < ApplicationController
     @rooms = Room.all
     @photos = @room.photos
     @room = Room.find(params[:id])
-    @markers = [{ lat: @room.latitude, lng: @room.longitude, info_window: render_to_string(partial: "popup" )}]
+    @markers = [{ lat: @room.latitude, lng: @room.longitude, info_window: render_to_string(partial: "popup")}]
     @reviews = @room.reviews
     @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
   end
 
   def update
     if @room.update(room_params)
-      flash[:notice] = "Saved"
+      flash[:notice] = "Your property has been published"
+      redirect_to rooms_path
     else
       flash[:notice] = "Something Went Wrong"
       redirect_back(fallback_location: request.referer)
