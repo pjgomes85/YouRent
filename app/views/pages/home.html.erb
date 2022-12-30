@@ -98,24 +98,82 @@
 
 <br>
 
-<div class="row">
-	<% @rooms.each do |room| %>
+    <div class="row" >
+      <% @rooms.each do |room| %>
+        <div class="container col-md-4">
+            <div class="card d-flex position-relative flex-column">
+                <div class='imgContainer'>
+              <%= cl_image_tag room.photos[0].key, width: 250, height: 244, crop: :fill if room.photos.length > 0 %>
+            </div>
+            <div class="content">
+              <%# <% if @user.avatar.attached? %>
+                <%# <%= cl_image_tag avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <%# <% else %>
+                  <%# <%= image_tag avatar_url1(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <%# <% end %>
+              <%= link_to room.listing_name, room %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-		<div class="col-md-4">
-			<div class="panel panel-default">
-				<div class="panel-heading preview">
-					<%= cl_image_tag room.photos[0].key, width: 400, height: 300, crop: :fill if room.photos.length > 0 %>
-				</div>
-				<div class="panel-body">
-          <%# <% if @user.avatar.attached? %>
-            <%# <%= cl_image_tag avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <%# <% else %>
-               <%# <%= image_tag avatar_url1(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-               <%# <% end %>
-					<%= link_to room.listing_name, room %>
-				</div>
-			</div>
-		</div>
 
-	<% end %>
-</div>
+<style>
+.container .card
+{
+    max-width: 300px;
+    height: 244px;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+}
+.container .card:hover
+{
+    height: 450px;
+}
+.container .card .imgContainer
+{
+    position: relative;
+    width:250px;
+    height:241px;
+    top:-50px;
+    left:10px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.container .card .imgContainer img
+{
+    max-width: 100%;
+    border-radius: 4px;
+}
+.container .card .content
+{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color:#111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.container .card:hover .content
+{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+
+@media (max-width: 330px){
+    .container .card .imgContainer{
+        left: -2px;
+    }
+}
+
+
+</style>
