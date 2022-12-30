@@ -2,7 +2,7 @@
 //user-cards//
 
 
-.container .card
+.container .card-home
 {
     max-width: 300px;
     height: 244px;
@@ -11,11 +11,11 @@
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
     transition: 0.3s ease-in-out;
 }
-.container .card:hover
+.container .card-home:hover
 {
     height: 450px;
 }
-.container .card .imgContainer
+.container .card-home .imgContainer
 {
     position: relative;
     width:250px;
@@ -25,12 +25,12 @@
     z-index: 1;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
-.container .card .imgContainer img
+.container .card-home .imgContainer img
 {
     max-width: 100%;
     border-radius: 4px;
 }
-.container .card .content
+.container .card-home .content
 {
     position: relative;
     margin-top: -140px;
@@ -41,7 +41,7 @@
     opacity: 0;
     transition: 0.3s ease-in-out;
 }
-.container .card:hover .content
+.container .card-home:hover .content
 {
     visibility: visible;
     opacity: 1;
@@ -50,7 +50,7 @@
 }
 
 @media (max-width: 330px){
-    .container .card .imgContainer{
+    .container .card-home .imgContainer{
         left: -2px;
     }
 }

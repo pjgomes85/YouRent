@@ -101,7 +101,7 @@
     <div class="row" >
       <% @rooms.each do |room| %>
         <div class="container col-md-4">
-            <div class="card d-flex position-relative flex-column">
+            <div class="card-home d-flex position-relative flex-column">
                 <div class='imgContainer'>
               <%= cl_image_tag room.photos[0].key, width: 250, height: 244, crop: :fill if room.photos.length > 0 %>
             </div>
