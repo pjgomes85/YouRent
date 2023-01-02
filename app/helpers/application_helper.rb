@@ -9,4 +9,7 @@ module ApplicationHelper
     user.avatar.attached?
     user.avatar.key
   end
+
+  
+
 end
