@@ -55,8 +55,7 @@ class RoomsController < ApplicationController
 
   def update
     if @room.update(room_params)
-      flash[:notice] = "Your property has been published"
-      redirect_to rooms_path
+      flash[:notice] = "Saved"
     else
       flash[:notice] = "Something Went Wrong"
       redirect_back(fallback_location: request.referer)
