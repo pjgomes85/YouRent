@@ -89,11 +89,19 @@
         </div>
       </div>
     </div>
-    <hr/>
+    <br/>
+
 
 
     <!---- Carousel ------->
       <div class="row">
+        <div class="col-md-6">
+        <div data-controller="map"
+      id='map'
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-map-markers-value="<%= @markers.to_json %>"
+      style="width:100%; height: 500px;"></div>
+    </div>
 
         <% if @room.photos.length > 0 %>
          <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -125,51 +133,44 @@
         </div>
          <% end %>
         </div>
-      <hr/>
+      <br/>
+      </div>
     </div>
 
 
+     <!----- Right Panel -------->
 
-
-
-    <!----- Right Panel -------->
-      <div class="col-md-4">
+      <div class="col-md-4 pull-right">
         <%=  render "reservations/form" %>
       </div>
 
+
+
+
       <!-- Reviews -->
       <div class="row">
-		<div class="booking-form booking">
-			<div class="col-md-8">
-				<h3>Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h3>
-				<div class="form-group">
-					<div>
-            <%= render 'reviews/list' %>
-					</div>
-            <%= render 'reviews/form'%>
-					<div>
-					</div>
-				</div>
-			</div>
-		</div>
-  </div>
-
-  
-
-
+        <div class="booking-form booking">
+          <div class="col-md-8">
+            <h3>Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h3>
+            <div class="form-group">
+              <div>
+                <%= render 'reviews/list' %>
+              </div>
+              <br/>
+                <%= render 'reviews/form'%>
+              <div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br/>
 
 
     <!----- MAPBOX --------->
-    <div class="row">
-      <div data-controller="map"
-      id='map'
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-      data-map-markers-value="<%= @markers.to_json %>"
-      style="width:100%; height: 500px;"></div>
-    </div>
+    <%# <div class="row"> %>
 
 
-</div>
 
 <script>
 	$('#average_rating').raty({
@@ -178,11 +179,3 @@
 		score: <%= @room.average_rating %>
 	});
 </script>
-
-
-<style>
-.reviews {
-
-  right: 5px;
-}
-</style>
