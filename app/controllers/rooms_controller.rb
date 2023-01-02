@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
   def create
     @room = current_user.rooms.build(room_params)
     if @room.save
-      redirect_to listing_room_path(@room), notice: "Saved...."
+      redirect_to listing_room_path(@room), notice: "Your Room has been Published...."
     else
       flash[:alert] = "Something Went wrong"
       render :new
@@ -56,6 +56,7 @@ class RoomsController < ApplicationController
   def update
     if @room.update(room_params)
       flash[:notice] = "Saved"
+      redirect_back(fallback_location: root_path)
     else
       flash[:notice] = "Something Went Wrong"
       redirect_back(fallback_location: request.referer)
