@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   before_action :is_authorised, only: %i[listing pricing description photo_upload amenities location update]
 
   def index
-    @rooms = current_user.rooms
+    @listings = current_user.rooms
     @rooms = Room.all
 
   end
@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
   def create
     @room = current_user.rooms.build(room_params)
     if @room.save
-      redirect_to listing_room_path(@room), notice: "Your Room has been Published...."
+      redirect_to listing_room_path(@room), notice: "Your Room has been Published ...."
     else
       flash[:alert] = "Something Went wrong"
       render :new
@@ -24,7 +24,7 @@ class RoomsController < ApplicationController
   end
 
   def listing
-
+    # @listing = current_user.rooms
   end
 
   def pricing
