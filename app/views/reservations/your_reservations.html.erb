@@ -18,22 +18,22 @@
 
     <div class="panel-body">
 
-      <% @rooms.each do |room| %>
-        <% room.reservations.each do |reservation| %>
+      <% @reservations.each do |reservation| %>
           <div class="row">
-            <div class="col-md-2" >
-              <%= reservation.start_date.strftime('%v') %>
+            <div class="col-md-4" >
+              <%= reservation.start_date.strftime('%v') %> --
+              <%= reservation.end_date.strftime('%v') %>
             </div>
             <div class ="col-md-2">
               <%= link_to room_path(reservation.room) do %>
-                <%= image_tag reservation.room.cover_photo(:thumb) %>
-              <% end %>
+                <%# <%= cl_image_tag reservation.room.cover_photo(:thumb) %>
+
             </div>
             <div class="col-md-8">
               <% link_to reservation.room.listing_name, room_path(reservation.room) %><br/><br/>
             <span>
                 <%= link_to user_path(reservation.user) do %>
-                  <%= image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %><br/>
+                  <%# <%= image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %><br/>
                     <%= reservation.user.fullname %>
             <% end %>
             </span>
@@ -50,19 +50,19 @@
 </div>
 
 
-   <%# <% @reservations.each do |reservation| %> %>
+   <%# <% @reservations.each do |reservation| %>
           <%# <div class="row"> %>
             <%# <div class="col-md-2" > %>
-              <%# <%= reservation.start_date.strftime('%v') %> %>
+              <%# <%= reservation.start_date.strftime('%v') %>
             <%# </div> %>
             <%# <div class ="col-md-2"> %>
-              <%# <%= link_to room_path(reservation.room) do %> %>
-                <%# <%= image_tag reservation.room.cover_photo(:thumb) %> %>
-              <%# <% end %> %>
+              <%# <%= link_to room_path(reservation.room) do %>
+                <%# <%= image_tag reservation.room.cover_photo(:thumb) %>
+              <%# <% end %>
             <%# </div> %>
             <%# <div class="col-md-8"> %>
-              <%# <% link_to reservation.room.listing_name, room_path(reservation.room) %><br/><br/> %>
+              <%# <% link_to reservation.room.listing_name, room_path(reservation.room) %><br/><br/>
             <%# <span> %>
-                <%# <%= link_to user_path(reservation.user) do %> %>
-                  <%# <%= image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %><br/> %>
-                    <%# <%= reservation.user.fullname %> %>
+                <%# <%= link_to user_path(reservation.user) do %>
+                  <%# <%= image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %><br/>
+                    <%# <%= reservation.user.fullname %>
