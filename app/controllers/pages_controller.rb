@@ -2,6 +2,18 @@ class PagesController < ApplicationController
   def home
     @rooms = Room.where(active: true).limit(3)
     @rooms = Room.all
+    @location = Room.where(params[:id])
+    @markers = @location.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+
+      }
+    end
+  end
+
+  def room_params
+    params.require(:room).permit(:home_type, :room_type, :acommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active, photos: [] )
   end
 
   def search
