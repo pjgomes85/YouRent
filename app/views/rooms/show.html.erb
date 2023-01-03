@@ -19,7 +19,7 @@
         <!-- Listing_name --->
         <div class="row">
           <div class="col-md-8">
-            <h1>Hosted by <%= @room.user.fullname %></h1>
+            <h1><%= @room.room_type %> place hosted by <%= @room.user.fullname %></h1>
             <%= @room.address %>
           </div>
           <div class="col-md-4 text center">
@@ -70,9 +70,9 @@
 
     <!---- Amenities --->
     <div class="row">
-       <div class="col-md-3">
+       <div class="col-md-6">
         <h4 class="amenities-title">What this place offers</h4>
-       </div>
+    </div>
 
       <div class="col-md-9">
         <div class="row">

@@ -102,10 +102,13 @@
       <% @rooms.each do |room| %>
         <div class="container col-md-4">
             <div class="card-home d-flex position-relative flex-column">
-                <div class='imgContainer'>
-                  <%= cl_image_tag room.photos[0].key,  width: 250, height: 244, crop: :fill if room.photos.length > 0 %>
 
-            </div>
+                <div class='imgContainer'>
+                  <%= link_to room do %>
+                      <%= cl_image_tag room.photos[0].key,  width: 250, height: 244, crop: :fill if room.photos.length > 0 %>
+                   <% end %>
+                </div>
+                
             <div class="content">
               <%# <% if @user.avatar.attached? %>
                 <%# <%= cl_image_tag avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

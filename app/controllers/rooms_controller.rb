@@ -30,6 +30,9 @@ class RoomsController < ApplicationController
   def pricing
   end
 
+  def checkout
+  end
+
   def description
   end
 

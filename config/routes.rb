@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'photo_upload'
       get 'amenities'
       get 'location'
+      get 'checkout' => 'pages#checkout'
     end
     resources :reviews, only: :create
     resources :photos, only: %i[create destroy]

@@ -2,7 +2,7 @@
  <ul class="sidebar-list">
   <li class="sidebar-item"><%= link_to "Your Listings", rooms_path, class: "sidebar-link" %></li>
   <li class="sidebar-item"><%= link_to "Your Reservations", your_reservations_path, class: "sidebar-link active" %></li>
-  <%# <li class="sidebar-item"><%= link_to "Your Trips", your_trips_path, class: "sidebar-link" %></li> 
+  <%# <li class="sidebar-item"><%= link_to "Your Trips", your_trips_path, class: "sidebar-link" %></li>
  </ul>
  <br/>
  <br/>
@@ -25,6 +25,7 @@
               <%= reservation.end_date.strftime('%v') %>
             </div>
             <div class ="col-md-2">
+            <h4>Total price : <%= reservation.total %>£</h4>
               <%= link_to room_path(reservation.room) do %>
                 <%# <%= cl_image_tag reservation.room.cover_photo(:thumb) %>
 
