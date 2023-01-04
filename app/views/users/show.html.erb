@@ -11,10 +11,10 @@
 			<div class="panel-body">
         <ul class="sidebar-list">
           <%# <% if @user.confirmation_token %>
-        <li>Email: <span class="pull-right icon-babu"> <i class="fa fa-check-circle-o"></i></span></li>
+        <li><i class="fa fa-envelope" aria-hidden="true"></i> <a href = "mailto: pjgomes85@hotmail.com" style=" text-decoration: none; "> <%= @user.email %></a> <span class="pull-right icon-babu"> <i class="fa fa-check-circle-o"></i></span></li>
          <%# <% end %>
-        <li>facebook:<span class="pull-right icon-babu"> <i class="fa fa-check-circle-o"></i></span></li>
-        <li>Phone Number:<span class="pull-right icon-babu"> <i class="fa fa-check-circle-o"></i></span></li>
+        <%# <li>facebook:<span class="pull-right icon-babu"> <i class="fa fa-check-circle-o"></i></span></li> %>
+        <li><i class="fa-solid fa-phone"></i> <%= @user.phone_number %> </i><span class="pull-right icon-babu"> <i class="fa fa-check-circle-o"></i></span></li>
 			</div>
 		</div>
 	</div>
