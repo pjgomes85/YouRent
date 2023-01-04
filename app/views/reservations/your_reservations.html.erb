@@ -26,6 +26,7 @@
             </div>
             <div class ="col-md-2">
             <h4>Total price : <%= reservation.total %>£</h4>
+            <%= link_to "Cancel", room_reservation_path(reservation, reservation), remote: true, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your reservation?"}, class: "btn btn-danger btn-block"%>
               <%= link_to room_path(reservation.room) do %>
                 <%# <%= cl_image_tag reservation.room.cover_photo(:thumb) %>
 
