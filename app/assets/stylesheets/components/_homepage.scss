@@ -1,0 +1,56 @@
+
+//user-cards//
+
+
+.container .card-home
+{
+    max-width: 300px;
+    height: 244px;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+}
+.container .card-home:hover
+{
+    height: 450px;
+}
+.container .card-home .imgContainer
+{
+    position: relative;
+    width:250px;
+    height:241px;
+    top:-50px;
+    left:10px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.container .card-home .imgContainer img
+{
+    max-width: 100%;
+    border-radius: 4px;
+}
+.container .card-home .content
+{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color:#111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.container .card-home:hover .content
+{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -20px;
+    transition-delay: 0.3s;
+}
+
+@media (max-width: 330px){
+    .container .card-home .imgContainer{
+        left: -2px;
+    }
+}

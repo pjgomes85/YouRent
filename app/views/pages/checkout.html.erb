@@ -1,4 +1,5 @@
-<%= form_for([@room, @room.reservations.new])  do |f| %>
+<h1>Hello</h1>
+<%= simple_form_for ([@room, @room.reservations.new])  do |f| %>
 
    <div class="booking-form booking" id="myHeader">
       <div class="price">£<%= @room.price %> night <span id="average_rating"></span><h3 class="pull-right">(<%= @reviews.count %>)<i class="fa-solid fa-star"></i>  </div>
@@ -22,41 +23,3 @@
       </form>
     </div>
   <br/>
-
-  <script>
-window.onscroll = function() {myFunction()};
-
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-</script>
-
-
-<style>
-
-.sticky + .booking-form + .booking {
-  padding-top: 102px;
-}
-
-.sticky {
-  position: fixed;
-  top: 150px;
-  width: 25%;
-
-}
-
-
-.price {
-  margin-bottom: 20px;
-  color: #3e485c;
-  font-weight: 700;
-  font-size: 20px;
-}
-</style>

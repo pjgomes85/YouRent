@@ -27,7 +27,8 @@ class ReservationsController < ApplicationController
 
 
   def your_reservations
-    @rooms = current_user.rooms
+    # @rooms = current_user.rooms
+    @reservations = Reservation.where(user_id: current_user)
   end
 
   private

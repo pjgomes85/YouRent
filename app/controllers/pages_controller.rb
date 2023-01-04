@@ -4,6 +4,7 @@ class PagesController < ApplicationController
     @rooms = Room.all
   end
 
+
   def search
     @rooms = Room.all
 
@@ -11,6 +12,7 @@ class PagesController < ApplicationController
   	if params[:search].present? && params[:search].strip != ""
   		session[:loc_search] = params[:search]
   	end
+
 
   	# arrResult = Array.new
 

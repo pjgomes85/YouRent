@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   before_action :is_authorised, only: %i[listing pricing description photo_upload amenities location update]
 
   def index
-    @rooms = current_user.rooms
+    @listings = current_user.rooms
     @rooms = Room.all
 
   end
@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
   def create
     @room = current_user.rooms.build(room_params)
     if @room.save
-      redirect_to listing_room_path(@room), notice: "Saved...."
+      redirect_to listing_room_path(@room), notice: "Your Room has been Published ...."
     else
       flash[:alert] = "Something Went wrong"
       render :new
@@ -24,10 +24,13 @@ class RoomsController < ApplicationController
   end
 
   def listing
-
+    # @listing = current_user.rooms
   end
 
   def pricing
+  end
+
+  def checkout
   end
 
   def description
@@ -48,14 +51,15 @@ class RoomsController < ApplicationController
     @rooms = Room.all
     @photos = @room.photos
     @room = Room.find(params[:id])
-    @markers = [{ lat: @room.latitude, lng: @room.longitude, info_window: render_to_string(partial: "popup" )}]
+    @markers = [{ lat: @room.latitude, lng: @room.longitude, info_window: render_to_string(partial: "popup") }]
     @reviews = @room.reviews
-    @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
+    @asReview = @reviews.find_by(user_id: current_user.id) if current_user
   end
 
   def update
     if @room.update(room_params)
       flash[:notice] = "Saved"
+      redirect_back(fallback_location: root_path)
     else
       flash[:notice] = "Something Went Wrong"
       redirect_back(fallback_location: request.referer)

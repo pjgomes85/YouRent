@@ -6,19 +6,29 @@
 		<%= f.text_area :comment, rows: 3, class: "form-control" %>
 	</div>
 
+   <div class="field form-group">
+      <%= f.label :star, "What's your overall rating?" %>
+    <div class="rating">
+      <%= f.collection_radio_buttons(:star, [[5],[4],[3],[2],[1]], :first, :last) do |star| %>
+        <%= star.radio_button %>
+        <%= star.label(class: "text-white") %>
+      <% end %>
+    </div>
+
 
 	<%= f.hidden_field :room_id, value: @room.id %>
 
 	<div class="actions">
 		<%= f.submit "Create", class: "btn btn-primary" %>
 	</div>
+  </div>
 
 <% end %>
 
-<script>
+<%# <script>
 	$('#user_stars').raty({
 		path: '/assets',
 		scoreName: 'review[star]',
 		score: 1
 	});
-</script>
+</script> %>
