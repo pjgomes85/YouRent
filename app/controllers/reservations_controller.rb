@@ -32,7 +32,6 @@ class ReservationsController < ApplicationController
     redirect_back(fallback_location: request.referer)
   end
 
-
   def your_reservations
     # @rooms = current_user.rooms
     @reservations = Reservation.where(user_id: current_user)
