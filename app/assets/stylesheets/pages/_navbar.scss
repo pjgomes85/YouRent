@@ -1,6 +1,12 @@
 .container-fluid {
   padding-inline-start: 20px;
-
+  height: 56px;
+  padding: 0 16px;
+  display: flexbox;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .flex-item {
