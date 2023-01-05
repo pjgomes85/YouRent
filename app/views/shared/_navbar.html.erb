@@ -24,8 +24,8 @@
                   <% end %>
 
                 <ul class="dropdown-content" id="dropDown">
-                  <%= link_to "Your Listings", rooms_path %>
-                  <%= link_to "Your Reservations", your_reservations_path %>
+                  <div class="search-bar"><i class="icon fal fa-house-user"></i></i><%= link_to "Your Listings", rooms_path %></div>
+                  <div class="search-bar"><i class="icon far fa-calendar-check"></i><%= link_to "Your Reservations", your_reservations_path %></div>
                 <%# <%= link_to "Your trips",  your_trips_path , class: "dropdown-item" %>
                 <hr class="solid">
                     <%= link_to "My Profile", user_path(current_user.id) %>

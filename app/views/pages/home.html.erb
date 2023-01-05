@@ -12,8 +12,8 @@
       <div class="col-md-6">
         <div class="search-bar"><%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control input-text", :style => "border-radius: 40px 0 0 40px;"%></div>
       </div>
-      <div class="col-md-1">
-        <button class="btnsearch"><%= submit_tag "", :style => "display: none;" %></i></button>
+      <div class="search">
+        <button class="btnsearch"><%= submit_tag "", :style => "display: none;" %></button>
       </div>
       <%# <div class="col-md-3"> %>
       <%# <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
@@ -30,6 +30,12 @@
     </div>
   </div>
 <% end %>
+
+<style>
+.search {
+  width: 10%;
+}
+</style>
 
 <br/><hr/><br/>
 
