@@ -1,8 +1,9 @@
 // Specific CSS for your home-page
-body {
-  // color: #565a5c;
-  background-color: #F8F8F8;
+h1, h2, p {
+  color: white;
 }
+
+
 
 .container {
 	width: 80%;
@@ -87,6 +88,11 @@ a:hover {
 .banner {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.description, a {
+  color: black;
+  text-decoration: none ;
 }
 
 /* /* .search-bar .input-text {

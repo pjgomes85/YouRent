@@ -1,5 +1,5 @@
 .btn {
-  color: white;
+  color: #3da6ff !important;
   border-radius: 5px;
   font-weight: bold;
   padding: 9px 27px;
@@ -42,11 +42,11 @@
   background-color: #ff5a5f;
 }
 
- .btn-form:hover {
-  outline: none;
-  border-color: #e00007;
-  background-color: #e00007;
-}
+//  .btn-form:hover {
+//   outline: none;
+//   border-color: #3da6ff;
+//   background-color: #3da6ff;
+// }
 
 .btn-file {
   position: relative;

@@ -11,7 +11,7 @@
 </div>
 
 <div class="col-md-9">
-  <div class="panel panel-default">
+  <div class="panel panel-default" style="background-color: #222222; color: white;">
     <div class="panel-heading">
     Your Reservations
     </div>
@@ -35,7 +35,7 @@
                     </div>
 
                       <div class="col-md-2 ">
-                        <%= link_to "Cancel", room_reservation_path(reservation, reservation), remote: true, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your reservation?"}, class: "btn btn-danger btn-block"%>
+                        <%= link_to "CANCEL", room_reservation_path(reservation, reservation), remote: true, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your reservation?"}, class: "btn  btn-block"%>
                       </div>
 
                          <div class="col-md-6">
