@@ -20,8 +20,8 @@
                <% end %>
 
             <div class="dropdown">
-              <button class="dropbtn">Dropdown</button>
-                <div class="dropdown-content">
+              <button class="dropbtn"  onclick="myFunction()"><i class="fa-solid fa-bars"></i></button>
+                <div class="dropdown-content" id="myDIV">
                 <%= link_to "Your Listings", rooms_path %>
                 <%= link_to "Your Reservations", your_reservations_path %>
                 <%# <%= link_to "Your trips",  your_trips_path , class: "dropdown-item" %>
@@ -54,7 +54,7 @@
 
 <style>
 .dropbtn {
-  background-color: #04AA6D;
+
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -88,3 +88,14 @@
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 </style>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
