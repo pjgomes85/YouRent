@@ -12,8 +12,8 @@
       <div class="col-md-6">
         <div class="search-bar"><i class="icon fa fa-search"></i><%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control input-text" %></div>
       </div>
-      <div class="col-md-3">
-        <%= submit_tag "Search", class: "form-control btn btn-normal btn-block" %>
+      <div class="col-md-1 search-bar">
+        <i class="icon fa fa-search"></i><%= submit_tag "Search", class: "form-control btn btn-normal btn-block" %>
       </div>
       <%# <div class="col-md-3"> %>
       <%# <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
