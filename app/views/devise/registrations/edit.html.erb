@@ -1,70 +1,119 @@
-<div class="row">
   <div class="col-md-3">
     <ul class="sidebar-list">
-      <li class="side-bar-item"><%= link_to "Edit Profile", edit_user_registration_path, class: "sidebar-link active" %></li>
+      <li class="sidebar-item"><%= link_to "Edit Profile", edit_user_registration_path, class: "sidebar-link active" %></li>
+      <li class="sidebar-item"><%= link_to "View My Profile", user_path(current_user.id), class: "sidebar-link" %></li>
     </ul>
     <br/>
-    <%= link_to "View My Profile", user_path(current_user.id), class: "btn btn-normal" %>
+    <br/>
   </div>
-  <div class="col-md-9 text-center">
-    <div class="panel panel-default">
-      <div class="panel-heading">Your Profile</div>
+
+  <div class="col-md-6 text-center">
+    <div class="panel panel-default" style="background-color: black !important;">
+      <div class="panel-heading">Edit Profile</div>
         <div class="panel-body">
           <div class="container">
 
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, data: { turbo:false }) do |f| %>
               <%= f.error_notification %>
 
-              <div class="form-group">
+              <form class="mx-1 mx-md-4">
 
-                <%= f.input :avatar, as: :file %>
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fa fa-camera fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                <%= f.input :avatar, as: :file, class: "form-control" %>
+                  <label class="form-label" for="form3Example1c"></label>
+                    </div>
+                  </div>
 
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
                 <%= f.input :fullname,
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "name" }, placeholder: "Full Name", class: "form-control"%>
-              </div>
-
-
-                <div>
-                  <%= f.input :phone_number, placeholder: "Phone Number", required: true, autofocus: true, class: "form-control" %>
-                </div>
-
-
-                  <div class="form-group">
-                    <%= f.text_area :description, rows: 5, cols: 25,  placeholder: "Description", required: true, autofocus: true, class: "form-control" %>
+              <label class="form-label" for="form3Example1c"></label>
+                    </div>
                   </div>
 
-                <div class="form-group">
-                  <%= f.input :email, required: true, autofocus: true, class: "form-control" %>
-                </div>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fa fa-phone fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                  <%= f.input :phone_number,
+                              placeholder: "Phone Number",
+                              required: true,
+                              autofocus: true,
+                              class: "form-control hello" %>
+                <label class="form-label" for="form3Example3c"></label>
+                    </div>
+                  </div>
+
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fa fa-pencil-square-o fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                    <%= f.input :description,
+                                rows: 5, cols: 25,
+                                placeholder: "Description",
+                                required: true, autofocus: true,
+                                label: 'Your Bio',
+                                class: "form-control" %>
+                    <label class="form-label" for="form3Example3c"></label>
+                    </div>
+                  </div>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                  <%= f.input :email,
+                              required: true,
+                              autofocus: true,
+                              class: "form-control" %>
+                <label class="form-label" for="form3Example3c"></label>
+                    </div>
+                  </div>
 
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                 <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
               <% end %>
 
-            <div class="form-inputs">
+            <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fa fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
               <%= f.input :password,
                           hint: "leave it blank if you don't want to change it",
                           required: false,
                           input_html: { autocomplete: "new-password" }, class: "form-control" %>
-            </div>
+              <label class="form-label" for="form3Example3c"></label>
+                    </div>
+                  </div>
 
-            <div class="form-inputs">
+
+            <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
               <%= f.input :password_confirmation,
                           required: false,
                           input_html: { autocomplete: "new-password" }, class: "form-control" %>
-            </div>
+            <label class="form-label" for="form3Example3c"></label>
+                    </div>
+                  </div>
 
-              <div class="form-inputs">
+              <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fa fa-unlock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
               <%= f.input :current_password,
                           hint: "we need your current password to confirm your changes",
                           required: true,
-                          input_html: { autocomplete: "current-password" }, class: "form-control" %>
-              </div>
+                          input_html: { autocomplete: "current-password" }, class: "form-control", style: "color: red !important;" %>
+               <label class="form-label" for="form3Example3c"></label>
+                    </div>
+                  </div>
 
             <div class="form-actions">
-              <%= f.button :submit, "Update", class: "btn btn-normal btn-block"%>
+              <%= f.button :submit, "UPDATE", class: "btn  btn-block", style: "font-size: 15px;"%>
 
               <% end %>
           </div>
@@ -72,10 +121,9 @@
 
 
             <div>
-              <p><%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+              <p><%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, style: "color: red !important;" %></p>
             </div>
 
-             <%= link_to "Back", :back %>
            </div>
           </div>
         </div>
