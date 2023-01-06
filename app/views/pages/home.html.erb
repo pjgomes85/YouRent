@@ -5,46 +5,36 @@
 </div>
 
 
-
-
-<%= form_tag search_path, method: :get do |f| %>
-  <div class="row">
-      <div class="col-md-6">
-        <div class="search-bar"><%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control input-text", :style => "border-radius: 40px 0 0 40px;"%></div>
-      </div>
-      <div class="search">
-        <button class="btnsearch"><%= submit_tag "", :style => "display: none;" %></button>
-      </div>
-      <%# <div class="col-md-3"> %>
-      <%# <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
+    <%= form_tag search_path, method: :get do |f| %>
+      <div class="row">
+          <div class="col-md-4">
+            <div class="search-bar"><%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control input-text", :style => "border-radius: 40px 0 0 40px; background-color: black; "%></div>
+          </div>
+          <div class="search">
+            <button class="btnsearch"><%= submit_tag "", :style => "display: none;" %></button>
+          </div>
+          <%# <div class="col-md-3"> %>
+          <%# <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
+          <%# </div> %>
+            <%# <div class="col-md-3"> %>
+            <%# <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control datepicker" %>
+        <%# </div> %>
       <%# </div> %>
-        <%# <div class="col-md-3"> %>
-        <%# <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control datepicker" %>
-    <%# </div> %>
-  <%# </div> %>
-  <br/><br/>
+      <br/><br/>
+    <% end %>
 
-  <div class="row">
-    <div class="col-md-offset-4 col-md-4">
+      <style>
+      .search {
+        width: 10%;
+      }
+      </style>
 
+    <br/><hr/><br/>
+    <div class="text-center">
+      <h2>Explore the world</h2>
+      <p>Discover inspiring places close to home.</p>
     </div>
-  </div>
-<% end %>
-
-<style>
-.search {
-  width: 10%;
-}
-</style>
-
-<br/><hr/><br/>
-
-<div class="text-center">
-	<h2>Explore the world</h2>
-	<p>Discover inspiring places close to home.</p>
-</div>
-
-<br>
+    <br>
 
 <div class="row">
 	<div class="col-md-4 col-sm-12">

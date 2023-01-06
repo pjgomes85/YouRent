@@ -17,7 +17,7 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner item" style="border-radius: 25px !important;">
             <% @room.photos.each do |photo| %>
-              <div class="item <%= 'active' if photo.id == @photos[1].id %>">
+              <div class="item <%= 'active' if photo.id == @photos[0].id %>">
                 <%= cl_image_tag photo.key, class: "carousel-img" %>
               </div>
             <% end %>
@@ -43,17 +43,15 @@
         <div class="col-md-8">
         <!-- Listing_name --->
           <div class="row card-body">
-            <div class="col-md-8">
+            <div class="col-md-4">
               <h1><%= @room.room_type %> place hosted by <%= @room.user.fullname %></h1>
-                <%= @room.address %>
-            </div>
-          <div class="col-md-4 text center">
+          <div class="col-md-10 text center">
               <%= link_to user_path(@room.user.id) do %>
               <%= cl_image_tag avatar_url(@room.user), class: "img-circle avatar-medium" %>
               <% end %>
           </div>
-        </div>
-
+                <%= @room.address %>
+            </div>
         <hr/>
 
 
@@ -83,6 +81,7 @@
       </div>
 
     </div>
+  </div>
     <hr/>
 
     <!---- About --->
