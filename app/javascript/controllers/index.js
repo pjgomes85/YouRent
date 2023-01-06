@@ -13,4 +13,5 @@ application.register("hello", HelloController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
-import "./dropdown"
+import BookController from "./book_controller"
+application.register("book", BookController)

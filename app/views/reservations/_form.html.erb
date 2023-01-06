@@ -1,6 +1,6 @@
 <%= form_for([@room, @room.reservations.new])  do |f| %>
 
-   <div class="booking-form booking" id="myHeader">
+   <div class="booking-form booking" data-controller="book" id="myHeader">
       <div class="price">£<%= @room.price %> night <span id="average_rating"></span><h3 class="pull-right">(<%= @reviews.count %>)<i class="fa-solid fa-star" style="color: #fabc05;"></i></div>
       <form>
         <div class="row">

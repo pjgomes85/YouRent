@@ -28,3 +28,4 @@ export default class extends Controller {
     this.geocoder.onRemove()
   }
 }
+
