@@ -47,7 +47,6 @@ gem "font-awesome-sass", "~> 6.2.1"
 
 # gem 'turbolinks', '~> 5.2.0' #makes the pages faster
 
-gem 'sprockets', '~> 4.0'
 
 
 gem 'ransack'

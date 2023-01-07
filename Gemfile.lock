@@ -313,7 +313,6 @@ DEPENDENCIES
   sassc-rails
   selenium-webdriver
   simple_form!
-  sprockets (~> 4.0)
   sprockets-rails
   stimulus-rails
   turbo-rails

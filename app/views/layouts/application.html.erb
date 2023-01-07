@@ -41,7 +41,13 @@
 
 
   <div class="container">
-       <p class="notice"><%= notice %></p>
+          <% if notice %>
+            <p class="notice">
+              <%= notice  %>
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <% end %>
+            </p>
+
        <p class="alert"><%= alert %></p>
 
     <%= yield %>
@@ -49,5 +55,29 @@
   </body>
 
 
-  <%# <%= render "shared/footer" %> 
+  <%# <%= render "shared/footer" %>
 </html>
+
+<style>
+.notice {
+  background-color: green !important;
+  position:fixed !important;
+}
+
+
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
