@@ -1,6 +1,7 @@
 .alert {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.6s; /* 600ms to fade out */
+
 }
+

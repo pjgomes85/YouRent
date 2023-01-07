@@ -1,7 +1,5 @@
 
 //user-cards//
-
-
 .container .card-home
 {
     max-width: 300px;
@@ -10,6 +8,7 @@
     padding: 20px 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
     transition: 0.3s ease-in-out;
+    border-radius: 13px;
 }
 .container .card-home:hover
 {
@@ -54,3 +53,4 @@
         left: -2px;
     }
 }
+

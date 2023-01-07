@@ -11,44 +11,52 @@
 </div>
 
 <div class="col-md-9">
-  <div class="panel panel-default">
+  <div class="panel panel-default" style="background-color: #222222; color: white;">
     <div class="panel-heading">
     Your Reservations
     </div>
+      <div class="panel-body">
 
-    <div class="panel-body">
-
-      <% @reservations.each do |reservation| %>
+        <% @reservations.each do |reservation| %>
           <div class="row">
-            <div class="col-md-4" >
-              <%= reservation.start_date.strftime('%v') %> --
-              <%= reservation.end_date.strftime('%v') %>
-            </div>
-            <div class ="col-md-2">
-            <h4>Total price : <%= reservation.total %>£</h4>
+            <div class="col-md-2">
               <%= link_to room_path(reservation.room) do %>
-                <%# <%= cl_image_tag reservation.room.cover_photo(:thumb) %>
+                <%= cl_image_tag reservation.room.photos[0].key, height: 70, width: 70 %>
+                  <% end %>
+              </div>
+                  <div class="col-md-5">
+                    <%= reservation.start_date.strftime('%v') %> TO
+                    <%= reservation.end_date.strftime('%v') %>
+                  </div>
 
+
+                    <div class ="col-md-3">
+                      <h4>Total price : <%= reservation.total %>£</h4>
+                    </div>
+
+                      <div class="col-md-2 ">
+                        <%= link_to "CANCEL", room_reservation_path(reservation, reservation), remote: true, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your reservation?"}, class: "btn  btn-block"%>
+                      </div>
+
+                         <div class="col-md-6">
+                            <%# <%= link_to user_path(reservation.user) do %>
+                              <%# <%= cl_image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %>
+                                <%# <%= reservation.user.fullname %>
+                      </div>
+                    </div>
+                  <hr/>
+                <% end %>
+                </div>
+              </div >
             </div>
-            <div class="col-md-8">
-              <% link_to reservation.room.listing_name, room_path(reservation.room) %><br/><br/>
-            <span>
-                <%= link_to user_path(reservation.user) do %>
-                  <%# <%= image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %><br/>
-                    <%= reservation.user.fullname %>
-            <% end %>
-            </span>
           </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
         </div>
-      <hr/>
-
-      <% end %>
-      <% end %>
-
-      </div>
-    </div >
-  </div>
-</div>
 
 
    <%# <% @reservations.each do |reservation| %>
@@ -62,8 +70,8 @@
               <%# <% end %>
             <%# </div> %>
             <%# <div class="col-md-8"> %>
-              <%# <% link_to reservation.room.listing_name, room_path(reservation.room) %><br/><br/>
+              <%# <% link_to reservation.room.listing_name, room_path(reservation.room) %>
             <%# <span> %>
                 <%# <%= link_to user_path(reservation.user) do %>
-                  <%# <%= image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %><br/>
+                  <%# <%= image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %>
                     <%# <%= reservation.user.fullname %>

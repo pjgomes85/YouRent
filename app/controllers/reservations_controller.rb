@@ -25,6 +25,12 @@ class ReservationsController < ApplicationController
     @trips = current_user.reservations.order(start_date: :asc)
   end
 
+  def destroy
+    @reservations = Reservation.find(params[:id])
+    @reservations.destroy
+    flash[:notice] = "Reservation cancelled"
+    redirect_back(fallback_location: request.referer)
+  end
 
   def your_reservations
     # @rooms = current_user.rooms

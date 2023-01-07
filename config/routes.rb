@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
     resources :reviews, only: :create
     resources :photos, only: %i[create destroy]
-    resources :reservations, only: [:create]
+    resources :reservations, only: %i[create destroy]
   end
   resources :reviews, only: [:destroy]
 

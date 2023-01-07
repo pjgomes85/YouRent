@@ -3,11 +3,13 @@
   height: 4rem;
   width: 100%;
   text-align: center;
+  color:white;
 }
 
 
 .form-group {
   margin-bottom: 25px;
+  color:white;
 }
 
 .form-group input {
@@ -15,6 +17,7 @@
   border: 1px solid #ff5a5e;
   cursor: pointer;
   user-select: none;
+  color: white;
 
 }
 
@@ -66,4 +69,20 @@
   font-size: 0.95em;
   text-align: center;
 
+}
+
+// BOOKING FORM STICKY
+.sticky {
+  position: fixed;
+  top: 550px;
+  width: 25%;
+
+}
+
+
+.price {
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
 }

@@ -1,49 +1,76 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class=" navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png", class: "logo" %>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+
+
 
     <div class="flex-item" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Become a Host", new_room_path, class: "nav-link"  %>
+            <%= link_to "BECOME A HOST", new_room_path, class: "btn"  %>
           </li>
+        </ul>
 
-          <li class="nav-item dropdown">
-          <% if current_user.avatar.attached? %>
-            <%= cl_image_tag avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <% else %>
-               <%= image_tag avatar_url1(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-               <% end %>
 
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Your Listings", rooms_path, class: "dropdown-item" %>
-              <%= link_to "Your Reservations", your_reservations_path, class: "dropdown-item" %>
-              <%# <%= link_to "Your trips",  your_trips_path , class: "dropdown-item" %>
-               <hr class="solid">
-              <%= link_to "My Profile", user_path(current_user.id), class: "dropdown-item" %>
-              <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            <div class="dropdown">
+              <button class="dropbtn"  onclick="myFunction()"><i class="fa-solid fa-bars bars"></i></button>
             </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <ul>
-              <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            </ul>
-          </li>
-        <% end %>
-      </ul>
+
+              <div class="col-md-2">
+                <% if current_user.avatar.attached? %>
+                  <%= cl_image_tag avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <% else %>
+                  <%= image_tag avatar_url1(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% end %>
+              </div>
+
+                <ul class="dropdown-content" id="dropDown">
+                    <div class="search-bar"><i class="icon fa fa-home" aria-hidden="true"></i><%= link_to "Your Listings", rooms_path %></div>
+                      <div class="search-bar"><i class="icon far fa-calendar-check"></i><%= link_to "Your Reservations", your_reservations_path %></div>
+                <%# <%= link_to "Your trips",  your_trips_path , class: "dropdown-item" %>
+                <hr class="solid">
+                      <div class="search-bar"><i class="icon fa fa-user-circle-o" aria-hidden="true"></i><%= link_to "My Profile", user_path(current_user.id) %></div>
+                    <div class="search-bar"><i class="icon fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "Edit Profile", edit_user_registration_path %></div>
+                  <div class="search-bar"><i class="icon fa fa-sign-out" aria-hidden="true"></i><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %></div>
+                </div>
+              </ul>
+
+            <% else %>
+              <li>
+                <ul>
+                  <%= link_to "REGISTER", new_user_registration_path, class: "user_session" %>
+                  <%= link_to "LOGIN", new_user_session_path, class: "user_session" %>
+                </ul>
+              </li>
+            <% end %>
+
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+              <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("dropDown");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>

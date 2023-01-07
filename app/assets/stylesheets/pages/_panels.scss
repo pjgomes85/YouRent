@@ -1,6 +1,6 @@
 .panel-default .panel-heading {
   color: #ffff;
-  background-color: #ff385c;
+  background-color: black;
   font-size: 18px;
   font-weight: 400;
 }
@@ -29,6 +29,11 @@
 
 .panel-body {
 font-size: 15px;
+background-color: black;
+border-radius: 25px;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+color: white;
 }
 
 .cardcss {

@@ -1,7 +1,11 @@
 .avatar {
-  width: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
+  overflow: clip;
+  margin-top: 10px;
 }
+
 .avatar-large {
   width: 56px;
   border-radius: 50%;
