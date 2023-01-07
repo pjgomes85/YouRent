@@ -1,14 +1,8 @@
-<% unless flash.empty? %>
-<script type="text/javascript">
-  <% flash.each do |key, value| %>
-    <% type = key.to_s.gsub('alert','error').gsub('notice','success') %>
-    toastr['<%= type %>']('<%= value %>')
-  <% end %>
-</script>
-<% end %>
+<% if notice %>
+            <p class="alert alert-success alert-dismissible col-md-2">
+              <%= notice  %><button type="button" class="close" data-dismiss="alert">&times;</button>
+            <% end %>
+            </p>
 
-<style>
-p, .notice {
-  background-color: green !important;
-}
-</style>
+       <p class="alert"><%= alert %></p>
+
