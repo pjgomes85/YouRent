@@ -6,30 +6,31 @@
 
 
 
+
       <div class="row">
         <div class="col-md-4">
         <div><%= cl_image_tag @room.photos.first.key, width: 400, height: 500, style: "border-radius: 25px !important;" %></div>
         </div>
 
         <% if @room.photos.length > 0 %>
-         <div id="myCarousel" class="carousel slide" data-ride="carousel">
+         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <!-- Indicators -->
           <!-- Wrapper for slides -->
-          <div class="carousel-inner item" style="border-radius: 25px !important;">
+          <div class="carousel-inner" style="border-radius: 25px !important;">
             <% @room.photos.each do |photo| %>
-              <div class="item <%= 'active' if photo.id == @photos[0].id %>">
+              <div class="carousel-item item <%= 'active' if photo.id == @photos[0].id %>">
                 <%= cl_image_tag photo.key, class: "carousel-img" %>
               </div>
             <% end %>
           <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
                 </div>
               </div>
             </div>
@@ -37,6 +38,8 @@
           </div>
         <br/>
       <br/>
+
+
 
 
       <div class="row">
@@ -177,10 +180,4 @@
 
 
 
-<script>
-	$('#average_rating').raty({
-		path: '/assets',
-		readOnly: true,
-		score: <%= @room.average_rating %>
-	});
-</script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

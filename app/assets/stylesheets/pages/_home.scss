@@ -33,18 +33,24 @@ a:hover {
 .carousel {
   width: 50% !important;
   height: 50% !important;
+
 }
 
 .item {
   height: 500px;
+  transition: transform 0s ease !important;
+  overflow: hidden !important;
 }
 
 
 .item .carousel-img {
   width: 100%;
-  height: 100% !important;
+  height: 100%;
   object-fit: cover;
+
 }
+
+
 
 
 //---Discovery-card---//

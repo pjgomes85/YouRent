@@ -1,14 +1,1 @@
-<% unless flash.empty? %>
-<script type="text/javascript">
-  <% flash.each do |key, value| %>
-    <% type = key.to_s.gsub('alert','error').gsub('notice','success') %>
-    toastr['<%= type %>']('<%= value %>')
-  <% end %>
-</script>
-<% end %>
 
-<style>
-p, .notice {
-  background-color: green !important;
-}
-</style>
