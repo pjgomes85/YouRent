@@ -89,10 +89,10 @@
 </div>
 <br>
 
-  <div class="row">
+  <div class="row text-center">
     <% @rooms.each do |room| %>
-    <div class="container col-md-4 ">
-        <div class="hovereffect">
+    <div class="col-md-4 col-sm-6">
+        <div class="hovereffect ">
             <%= cl_image_tag room.photos[0].key,  width: 250, height: 244, crop: :fill, class: "img-responsive" if room.photos.length > 0 %>
                 <div class="overlay">
                     <h2><%= link_to room.listing_name, room %></h2>
