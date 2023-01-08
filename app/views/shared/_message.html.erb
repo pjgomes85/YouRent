@@ -1,14 +1,18 @@
 <% if notice %>
-            <p class="alert alert-success alert-dismissible col-md-2" id="one">
+            <p class="alert alert-success alert-dismissible" id="one">
               <%= notice  %><button type="button" class="close" data-dismiss="alert">&times;</button>
             <% end %>
             </p>
 
-       <p class="alert"><%= alert %></p>
+
 
 <script>
 var alert = document.getElementById("one");
 setTimeout(function() {
   alert.style.display = 'none';
 }, 10000)
+
+// document.getElementById("one").style.cssText =
+//             "position: absolute !important;";
+
 </script>
