@@ -1,6 +1,9 @@
+
 .alert {
-  max-width: 300px;
+  max-width: 350px;
   display: inline-block;
+  font-size: 15px;
+
 
 
 }
@@ -8,17 +11,15 @@
 .flash-msg {
   position: absolute;
   margin-left: 75%;
-  
+
 }
 
 
-
-
-@keyframes fadeOut {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-  }
-}
+// @keyframes fadeOut {
+//   0% {
+//     opacity:1;
+//   }
+//   100% {
+//     opacity:0;
+//   }
+// }
