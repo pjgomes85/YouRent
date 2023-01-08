@@ -83,19 +83,31 @@
 <p></p>
 <br/>
 
-
-
 <div class="text-center">
 	<h2>Just for the weekend</h2>
 	<p>Discover inspiring places close to home.</p>
 </div>
-
 <br>
+
+  <div class="row">
+    <% @rooms.each do |room| %>
+    <div class="container col-md-4 ">
+        <div class="hovereffect">
+            <%= cl_image_tag room.photos[0].key,  width: 250, height: 244, crop: :fill, class: "img-responsive" if room.photos.length > 0 %>
+                <div class="overlay">
+                    <h2><%= link_to room.listing_name, room %></h2>
+                      <p>
+                        <%= link_to room.address, room %>
+                      </p>
+                </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
 
 
     <div class="row" >
-
       <% @rooms.each do |room| %>
         <div class="container col-md-4">
             <div class="card-home d-flex position-relative flex-column" style="background-color: #282828;">
@@ -107,11 +119,6 @@
                 </div>
 
             <div class="content">
-              <%# <% if @user.avatar.attached? %>
-                <%# <%= cl_image_tag avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <%# <% else %>
-                  <%# <%= image_tag avatar_url1(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                  <%# <% end %>
                 <div class="description">
                   <i class="fa-sharp fa-solid fa-house"></i>  <%= link_to room.listing_name, room %>
                 </div>
@@ -123,6 +130,7 @@
                 </div>
               </div>
             <% end %>
+
           </div>
         </div>
       </div>
