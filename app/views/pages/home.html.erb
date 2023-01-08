@@ -93,7 +93,7 @@
     <% @rooms.each do |room| %>
     <div class="col-md-4 col-sm-6">
         <div class="hovereffect ">
-            <%= cl_image_tag room.photos[0].key,  width: 250, height: 244, crop: :fill, class: "img-responsive" if room.photos.length > 0 %>
+            <%= cl_image_tag room.photos[0].key,  width: 460, height: 220, crop: :fill, class: "img-responsive" if room.photos.length > 0 %>
                 <div class="overlay">
                     <h2><%= link_to room.listing_name, room %></h2>
                       <p>
@@ -106,33 +106,5 @@
   </div>
 
 
-
-    <div class="row" >
-      <% @rooms.each do |room| %>
-        <div class="container col-md-4">
-            <div class="card-home d-flex position-relative flex-column" style="background-color: #282828;">
-
-                <div class='imgContainer'>
-                  <%= link_to room do %>
-                      <%= cl_image_tag room.photos[0].key,  width: 250, height: 244, crop: :fill if room.photos.length > 0 %>
-                   <% end %>
-                </div>
-
-            <div class="content">
-                <div class="description">
-                  <i class="fa-sharp fa-solid fa-house"></i>  <%= link_to room.listing_name, room %>
-                </div>
-                  <br/>
-
-                  <div>
-                    <i class="fa-solid fa-location-dot"></i>  <%= link_to room.address, room %></div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-
-          </div>
-        </div>
-      </div>
     <br/>
   <br/>
