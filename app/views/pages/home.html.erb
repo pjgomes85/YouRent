@@ -97,16 +97,14 @@
            <%= link_to room, :action => 'go' do %>
                 <div class="overlay">
                     <h2><%= room.listing_name %></h2>
-                      <p>
-                        <%= room.address %>
-                      </p>
+                    <p><i class="fa-solid fa-location-dot"></i> <%= room.address %></p>
+                    <div class="bottomright">£ <%= room.price %> Night</div>
                 </div>
              <% end %>
         </div>
       </div>
     <% end %>
   </div>
-
 
     <br/>
   <br/>
