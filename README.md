@@ -1,4 +1,4 @@
-An APP with the Youtube fron-end design and a booking system like Airbnb.
+Rentals for All Occasions: Family Vacation, Business Travel
 
 
 Installation:
