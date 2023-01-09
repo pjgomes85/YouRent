@@ -5,8 +5,6 @@
 </div>
 
 
-
-
     <%= form_tag search_path, method: :get do |f| %>
       <div class="row">
           <div class="col-md-4">
@@ -89,39 +87,32 @@
 	<h2>Just for the weekend</h2>
 	<p>Discover inspiring places close to home.</p>
 </div>
-
 <br>
 
-    <div class="row" >
-      <% @rooms.each do |room| %>
-        <div class="container col-md-4">
-            <div class="card-home d-flex position-relative flex-column" style="background-color: #282828;">
+  <div class="row text-center">
+    <% @rooms.each do |room| %>
+    <div class="col-md-4 col-sm-6">
+        <div class="hovereffect">
+            <%= cl_image_tag room.photos[0].key,  width: 460, height: 220, crop: :fill, class: "img-responsive" if room.photos.length > 0 %>
+           <%= link_to room, :action => 'go' do %>
+                <div class="overlay">
+                    <h2><%= room.listing_name %></h2>
+                      <p>
+                          <i class="fa fa-user-circle-o "></i> <%= room.acommodate %>
+                          &nbsp;
+                          <i class="fa fa-bed "></i> <%= room.bed_room %>
+                           &nbsp;
+                          <i class="fa fa-bath "></i> <%= room.bath_room %>
+                      </p>
 
-                <div class='imgContainer'>
-                  <%= link_to room do %>
-                      <%= cl_image_tag room.photos[0].key,  width: 250, height: 244, crop: :fill if room.photos.length > 0 %>
-                   <% end %>
+                    <p><i class="fa-solid fa-location-dot"></i> <%= room.address %></p>
+                    <div class="bottomright">£ <%= room.price %> Night</div>
                 </div>
-
-            <div class="content">
-              <%# <% if @user.avatar.attached? %>
-                <%# <%= cl_image_tag avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <%# <% else %>
-                  <%# <%= image_tag avatar_url1(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                  <%# <% end %>
-                <div class="description">
-                  <i class="fa-sharp fa-solid fa-house"></i>  <%= link_to room.listing_name, room %>
-                </div>
-                  <br/>
-
-                  <div>
-                    <i class="fa-solid fa-location-dot"></i>  <%= link_to room.address, room %></div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
+             <% end %>
         </div>
       </div>
+    <% end %>
+  </div>
+
     <br/>
   <br/>

@@ -1,6 +1,15 @@
+
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+  max-width: 350px;
+  display: inline-block;
+  font-size: 15px;
+
+
+
+}
+
+.flash-msg {
+  position: absolute;
+  margin-left: 75%;
+
 }
