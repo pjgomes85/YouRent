@@ -1,8 +1,34 @@
-<% if notice %>
-            <p class="alert alert-success alert-dismissible col-md-2">
-              <%= notice  %><button type="button" class="close" data-dismiss="alert">&times;</button>
-            <% end %>
-            </p>
+    <% if notice %>
+      <div class="flash-msg">
+        <p class="alert alert-success alert-dismissible" id="one">
+          <i class="fa fa-check" aria-hidden="true"></i>
+            <strong><%= notice  %></strong>
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </p>
+      </div>
+      <% end %>
 
-       <p class="alert"><%= alert %></p>
+      <% if alert %>
+      <div class="flash-msg">
+        <p class="alert alert-danger alert-dismissible" role="alert" id="one">
+          <i class="fa fa-times" aria-hidden="true"></i>
+            <strong><%= alert %></strong>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </p>
+      </div>
+      <% end %>
 
+
+
+
+<%# <script>
+var alert = document.getElementById("one");
+setTimeout(function() {
+  alert.style.display = 'none';
+}, 8000)
+
+
+document.getElementById("one").style.cssText =
+            " opacity: 1; transition: opacity 0.2s;";
+
+</script> %>
