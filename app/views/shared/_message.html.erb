@@ -1,6 +1,6 @@
     <% if notice %>
       <div class="flash-msg">
-        <p class="alert alert-success alert-dismissible" id="one">
+        <p class="alert alert-success alert-dismissible" data-controller="flash_message" id="one">
           <i class="fa fa-check" aria-hidden="true"></i>
             <strong><%= notice  %></strong>
               <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -10,7 +10,7 @@
 
       <% if alert %>
       <div class="flash-msg">
-        <p class="alert alert-danger alert-dismissible" role="alert" id="one">
+        <p class="alert alert-danger alert-dismissible" role="alert" data-controller="flash_message"  id="one">
           <i class="fa fa-times" aria-hidden="true"></i>
             <strong><%= alert %></strong>
             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -21,14 +21,14 @@
 
 
 
-<%# <script>
-var alert = document.getElementById("one");
-setTimeout(function() {
-  alert.style.display = 'none';
-}, 8000)
+<script>
+// var alert = document.getElementById("flash");
+// setTimeout(function() {
+//   alert.style.display = 'none';
+// }, 8000)
 
 
-document.getElementById("one").style.cssText =
-            " opacity: 1; transition: opacity 0.2s;";
+// document.getElementById("one").style.cssText =
+//             " opacity: 1; transition: opacity 0.2s;";
 
-</script> %>
+</script>
