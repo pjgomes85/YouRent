@@ -106,7 +106,7 @@
 						<div class="panel-heading preview">
 							<%= cl_image_tag room.cover_photo, width: 150, height: 150, crop: :fill %>
 						</div>
-						<div class="panel-body">
+						<div class="panel-body" style="background-color: white !important; text-align: center;">
 							<%= link_to room.listing_name, room %>
 						</div>
           </div>
@@ -133,9 +133,10 @@
 }
 
 #left {
-  padding: 10px 400px 10px 20px;
-
-  height: 100%%
+  padding: 10px;
+  background-color: #222222;
+  border-radius: 25px;
+  color: white;
 }
 
 #right {
