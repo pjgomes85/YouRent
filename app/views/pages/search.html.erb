@@ -33,19 +33,19 @@
 
       <div class="row">
         <div class="col-md-4">
-          <div class="form-group select">
+          <div class="form-group select" style="background-color: #222222;">
             <label>Accommodate</label>
               <%= f.select :acommodate_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "acommodate", prompt: "Select...", class: "form-control"  %>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="form-group select">
+        <div class="col-md-4" >
+          <div class="form-group select" style="background-color: #222222;">
             <label>Bedrooms</label>
               <%= f.select :bed_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bed_room", prompt: "Select...", class: "form-control"  %>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="form-group select">
+          <div class="form-group select" style="background-color: #222222;">
             <label>Bathrooms</label>
                <%= f.select :bath_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bath_room", prompt: "Select...", class: "form-control"  %>
           </div>
