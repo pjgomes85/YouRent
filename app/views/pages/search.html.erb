@@ -102,10 +102,12 @@
 				<div class="col-md-2">
           <div class="panel panel-default">
 						<div class="panel-heading preview">
-							<%= cl_image_tag room.cover_photo, width: 150, height: 150, crop: :fill %>
+              <%= link_to room do %>
+							  <%= cl_image_tag room.cover_photo, width: 150, height: 150, crop: :fill %>
 						</div>
 						<div class="panel-body" style="background-color: white !important; text-align: center;">
-							<%= link_to room.listing_name, room %>
+							<%=  room.listing_name %>
+              <% end %>
 						</div>
           </div>
         </div>
