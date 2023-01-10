@@ -103,7 +103,7 @@
           <div class="panel panel-default">
 						<div class="panel-heading preview">
               <%= link_to room do %>
-							  <%= cl_image_tag room.cover_photo, width: 150, height: 150, crop: :fill %>
+							  <%= cl_image_tag room.photos[0].key, width: 150, height: 150, crop: :fill %>
 						</div>
 						<div class="panel-body" style="background-color: white !important; text-align: center;">
 							<%=  room.listing_name %>
