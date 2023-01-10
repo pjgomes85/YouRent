@@ -25,7 +25,7 @@ class PagesController < ApplicationController
   	@search = @rooms_address.ransack(params[:q])
   	@rooms = @search.result
 
-  	@arrRooms = @rooms.to_a
+  	@roomsarray = @rooms.to_a
 
 
   	if (params[:start_date] && params[:end_date] && !params[:start_date].empty? & !params[:end_date].empty?)
