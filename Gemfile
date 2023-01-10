@@ -49,7 +49,7 @@ gem "font-awesome-sass", "~> 6.2.1"
 
 
 
-gem 'ransack'
+gem 'ransack', :github => 'activerecord-hackery/ransack', :branch => 'main'
 
 
 # Use Redis adapter to run Action Cable in production
