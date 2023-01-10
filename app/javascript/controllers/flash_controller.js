@@ -10,7 +10,9 @@ export default class extends Controller {
       alert.style.display = 'none';
     }, 8000)
 
-    // document.getElementById("one").style.cssText =
-    //             " opacity: 1; transition: opacity 0.2s;";
- }
+  }
 }
+
+
+// document.getElementById("one").style.cssText =
+//             " opacity: 1; transition: opacity 0.2s;";
