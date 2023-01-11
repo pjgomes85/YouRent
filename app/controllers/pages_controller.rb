@@ -4,14 +4,13 @@ class PagesController < ApplicationController
     @rooms = Room.all
   end
 
-
   def search
-    @movies = Room.all
+    @rooms = Room.all
     if params[:query].present?
-      @movies = Room.where("address ILIKE ?", "%#{params[:query]}%")
+      sql_query = "room_type @@ :query OR address @@ :query"
+      @rooms = Room.where(sql_query, query: "%#{params[:query]}%")
     else
-      @movies = Room.all
+      @rooms = Room.all
     end
-
   end
 end
