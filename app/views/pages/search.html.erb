@@ -3,7 +3,7 @@
     <div class="row">
 
   <div  id="collapsePanel">
-    <%= search_form_for @search, url: search_path, data: {turbo: false}, method: :get do |f| %>
+    <%= search_form_for @search, url: search_path do |f| %>
 
         <%# <div class="row"> %>
           <%# <div class="col-md-2"> %>
@@ -33,19 +33,19 @@
 
       <div class="row">
         <div class="col-md-4">
-          <div class="form-group select" style="background-color: #222222;">
+          <div class="form-group select">
             <label>Accommodate</label>
               <%= f.select :acommodate_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "acommodate", prompt: "Select...", class: "form-control"  %>
           </div>
         </div>
-        <div class="col-md-4" >
-          <div class="form-group select" style="background-color: #222222;">
+        <div class="col-md-4">
+          <div class="form-group select">
             <label>Bedrooms</label>
               <%= f.select :bed_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bed_room", prompt: "Select...", class: "form-control"  %>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="form-group select" style="background-color: #222222;">
+          <div class="form-group select">
             <label>Bathrooms</label>
                <%= f.select :bath_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bath_room", prompt: "Select...", class: "form-control"  %>
           </div>
@@ -103,7 +103,7 @@
           <div class="panel panel-default">
 						<div class="panel-heading preview">
               <%= link_to room do %>
-							  <%= cl_image_tag room.photos[0].key, width: 150, height: 150, crop: :fill %>
+							  <%= cl_image_tag room.cover_photo, width: 150, height: 150, crop: :fill %>
 						</div>
 						<div class="panel-body" style="background-color: white !important; text-align: center;">
 							<%=  room.listing_name %>
@@ -113,6 +113,9 @@
         </div>
 			<% end %>
     </div>
+
+
+
 </div>
 
 
@@ -131,4 +134,11 @@
   color: white;
 }
 
+.right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100%;
+}
 </style>
