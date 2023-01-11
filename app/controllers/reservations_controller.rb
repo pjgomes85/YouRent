@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
 
     flash[:notice] = "Booked Successfully"
     end
-    redirect_to room
+    redirect_to your_reservations_path
   end
 
   def your_trips
