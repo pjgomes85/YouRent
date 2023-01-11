@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  get 'search' => 'pages#search'
 
   resources :users, only: [:show]
 
@@ -24,5 +23,6 @@ Rails.application.routes.draw do
 
   get '/your_trips' => 'reservations#your_trips'
   get '/your_reservations' => 'reservations#your_reservations'
+  get 'search' => 'pages#search'
 
 end
