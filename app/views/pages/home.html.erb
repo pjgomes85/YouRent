@@ -5,7 +5,7 @@
 </div>
 
 
-    <%= form_with url: search_path, method: :get do |f| %>
+    <%= form_tag search_path, method: :get do |f| %>
       <div class="row">
           <div class="col-md-4">
             <div class="search-bar"><%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control input-text", :style => "border-radius: 40px 0 0 40px; background-color: black; color: white;"%></div>
@@ -22,16 +22,6 @@
       <%# </div> %>
       <br/><br/>
     <% end %>
-
-<%= form_with url: search_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a movie"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
 
       <style>
       .search {
