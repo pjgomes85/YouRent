@@ -6,7 +6,7 @@
 		<%= f.text_area :comment, rows: 3, class: "form-control" %>
 	</div>
 
-   <div class="field form-group">
+   <div class="field form-group" style="background-color: #282828">
       <%= f.label :star, "What's your overall rating?" %>
     <div class="rating">
       <%= f.collection_radio_buttons(:star, [[5],[4],[3],[2],[1]], :first, :last) do |star| %>

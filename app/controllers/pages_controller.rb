@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   	end
 
 
-  	arrResult = Array.new
+  	# arrResult = Array.new
 
   	if session[:loc_search] && session[:loc_search] != ""
   		@rooms_address = Room.where(active: true).near(session[:loc_search], 5, order: 'distance')
@@ -27,8 +27,7 @@ class PagesController < ApplicationController
 
   	@arrRooms = @rooms.to_a
 
-
-  	if (params[:start_date] && params[:end_date] && !params[:start_date].empty? & !params[:end_date].empty?)
+  	if (params[:start_date] && params[:end_date] && !params[:start_date].empty? & !params[:end_date].empty? )
 
   		start_date = Date.parse(params[:start_date])
   		end_date = Date.parse(params[:end_date])
