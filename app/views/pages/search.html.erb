@@ -4,44 +4,25 @@
 
   <div  id="collapsePanel">
 
+<br/>
 
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm-8">
-      <div id="movies">
-        <% @movies.each do |movie| %>
-          <h4><%= movie.address %></h4>
-
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-     <%# <div class="row"> %>
-			<%# <% @movies.each do |movie| %> %>
-				<%# <div class="col-md-2"> %>
-          <%# <div class="panel panel-default">
-						<div class="panel-heading preview"> %>
-              <%# <%= link_to movie do %> %>
-							  <%# <%= cl_image_tag movie.cover_photo, width: 150, height: 150, crop: :fill %> %>
-						<%# </div> %>
-						<%# <div class="panel-body" style="background-color: white !important; text-align: center;"> %>
-							<%# <%=  movie.listing_name %> %>
-              <%# <% end %> %>
-						<%# </div>
+  <div class="row">
+			<% @movies.each do |movie| %>
+				<div class="col-md-2">
+         <div class="panel panel-default">
+						<div class="panel-heading preview">
+               <%= link_to movie do %>
+							  <%= cl_image_tag movie.cover_photo, width: 150, height: 150, crop: :fill %>
+						 </div>
+						<div class="panel-body" style="background-color: white !important; text-align: center;">
+							 <%=  movie.listing_name %>
+               <% end %>
+						 </div>
           </div>
-        <%# </div> %>
-			<%# <% end %> %>
-    <%# </div> %>
-
-
-
+        </div>
+			 <% end %>
+     </div>
 
 </div>
 
