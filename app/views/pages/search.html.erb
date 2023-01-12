@@ -30,21 +30,21 @@
 
       <div class="row">
         <div class="col-md-4">
-          <div class="form-group select">
+          <div class="select">
             <label>Accommodate</label>
               <%= label_tag :acommodate, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "acommodate", prompt: "Select...", class: "form-control"  %>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="form-group select">
+          <div class="select">
             <label>Bedrooms</label>
-              <%= label_tag :bed_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bed_room", prompt: "Select...", class: "form-control"  %>
+              <%= label_tag :bed_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bed_room", prompt: "Select...", class: "form-control"  %>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="form-group select">
+          <div class="select">
             <label>Bathrooms</label>
-               <%= label_tag :bath_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bath_room", prompt: "Select...", class: "form-control"  %>
+               <%= label_tag :bath_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bath_room", prompt: "Select...", class: "form-control"  %>
           </div>
         </div>
       </div>
@@ -63,24 +63,24 @@
       </div>
       <hr/>
 
-      <div class="row">
-        <div class="col-md-4">
-          <%= check_box_tag(:query, "is_tv") %> TV
-        </div>
-        <div class="col-md-4">
-          <%= check_box_tag(:query, "kitchen") %> Kitchen
-        </div>
-        <div class="col-md-4">
-          <%= check_box_tag(:query, "internet") %> Internet
-        </div>
-        <div class="col-md-4">
-          <%= check_box_tag(:query, "heating") %> Heating
-        </div>
-        <div class="col-md-4">
-          <%= check_box_tag(:query, "air condition") %> Air Condition
-        </div>
-      </div>
-      <hr/>
+      <%# <div class="row"> %>
+        <%# <div class="col-md-4"> %>
+          <%# <%= check_box_tag(:query, "is_tv") %>
+        <%# </div> %>
+        <%# <div class="col-md-4"> %>
+          <%# <%= check_box_tag(:query, "kitchen") %>
+        <%# </div> %>
+        <%# <div class="col-md-4"> %>
+          <%# <%= check_box_tag(:query, "internet") %>
+        <%# </div> %>
+        <%# <div class="col-md-4"> %>
+          <%# <%= check_box_tag(:query, "heating") %>
+        <%# </div> %>
+        <%# <div class="col-md-4"> %>
+          <%# <%= check_box_tag(:query, "air condition") %>
+        <%# </div> %>
+      <%# </div> %>
+      <%# <hr/> %>
 
       <div class="row text-center">
         <%= submit_tag "Search", class: "btn btn-form" %>
@@ -124,13 +124,5 @@
   background-color: #222222;
   border-radius: 25px;
   color: white;
-}
-
-.right {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 450px;
-  height: 100%;
 }
 </style>
