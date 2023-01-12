@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   def search
     @rooms = Room.all
     if params[:query].present?
-      sql_query = "room_type @@ :query OR address @@ :query OR acommodate @@ :query OR bed_room @@ :query OR bath_room @@ :query"
+      sql_query = "room_type @@ :query OR address @@ :query"
       @rooms = Room.where(sql_query, query: "%#{params[:query]}%")
     else
       @rooms = Room.all

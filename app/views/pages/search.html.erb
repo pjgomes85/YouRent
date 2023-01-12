@@ -32,19 +32,19 @@
         <div class="col-md-4">
           <div class="select">
             <label>Accommodate</label>
-              <%= label_tag :acommodate, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "acommodate", prompt: "Select...", class: "form-control"  %>
+              <%= label_tag :acommodate_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "acommodate", prompt: "Select...", class: "form-control"  %>
           </div>
         </div>
         <div class="col-md-4">
           <div class="select">
             <label>Bedrooms</label>
-              <%= label_tag :bed_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bed_room", prompt: "Select...", class: "form-control"  %>
+              <%= label_tag :bed_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bed_room", prompt: "Select...", class: "form-control"  %>
           </div>
         </div>
         <div class="col-md-4">
           <div class="select">
             <label>Bathrooms</label>
-               <%= label_tag :bath_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bath_room", prompt: "Select...", class: "form-control"  %>
+               <%= label_tag :bath_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bath_room", prompt: "Select...", class: "form-control"  %>
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@
           <%# <%= check_box_tag(:query, "air condition") %>
         <%# </div> %>
       <%# </div> %>
-      <%# <hr/> %>
+      <hr/>
 
       <div class="row text-center">
         <%= submit_tag "Search", class: "btn btn-form" %>
