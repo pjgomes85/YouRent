@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       get 'checkout' => 'pages#checkout'
     end
     resources :reviews, only: :create
-    resources :photos, only: %i[create destroy]
+    resources :photos, only: %i[create destroy update]
     resources :reservations, only: %i[create destroy]
   end
   resources :reviews, only: [:destroy]
