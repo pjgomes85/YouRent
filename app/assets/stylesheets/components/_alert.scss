@@ -6,6 +6,13 @@
 
 
 
+
+
+
+.flash-msg {
+  position: absolute;
+  margin-left: 75%;
+
 }
 
 .flash-msg {
@@ -13,3 +20,13 @@
   margin-left: 75%;
 
 }
+
+
+// @keyframes fadeOut {
+//   0% {
+//     opacity:1;
+//   }
+//   100% {
+//     opacity:0;
+//   }
+// }

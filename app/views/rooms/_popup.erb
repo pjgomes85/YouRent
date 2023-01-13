@@ -1,5 +1,7 @@
+
 <% @room.photos.first do |photo| %>
   <div id="content">
     <%= cl_image_tag room.photos.key,  width: 150, height: 150, crop: :thumb %>
   </div>
 <% end %>
+
