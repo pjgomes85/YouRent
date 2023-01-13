@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-md-2">
-    <h1 ><%= @room.listing_name %></h1> <h4 style="color: white;"><i class="fa fa-star" aria-hidden="true" style="color: #fabc05;"></i> Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h4>
+  <div class="col-md-4">
+    <h1 ><%= @room.listing_name.capitalize %></h1> <h4 style="color: white;"><i class="fa fa-star" aria-hidden="true" style="color: #fabc05;"></i> Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h4>
     <br/>
   </div>
 
@@ -46,14 +46,17 @@
 
               <div class="row">
               <div class="col-md-10">
-                <h2><%= @room.room_type %> Hosted by <%= @room.user.fullname %></h2>
+                <h2><%= @room.room_type.capitalize %> Hosted by <%= @room.user.fullname %></h2>
                 <h6 style="color: white;" ><i class="fa fa-map-marker"></i> <%= @room.address %></h6>
               </div>
                   <div class="col-md-2">
                   <%= link_to user_path(@room.user.id) do %>
-                    <%= cl_image_tag avatar_url(@room.user), class: "img-circle avatar-medium" %>
+                      <% if @room.user.avatar.attached? %>
+                          <%= cl_image_tag avatar_url(@room.user), class: "img-circle avatar-medium" %>
+                        <% else%>
+                          <%= image_tag avatar_url1(@room.user), class: "img-circle avatar-medium" %>
+                        <% end %>
                     <% end %>
-
                   </div>
                 </div>
               </div>
@@ -157,7 +160,7 @@
         <div class="booking-form booking">
           <div class="col-md-8">
             <h3>Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h3>
-            <div class="form-group">
+            <div class="form-group" style="background-color: #282828;">
               <div>
                 <%= render 'reviews/list' %>
               </div>

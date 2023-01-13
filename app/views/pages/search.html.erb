@@ -1,27 +1,23 @@
-<div id="main">
-  <div id="left">
-    <!-- Search panel -->
-  <div class="row">
+<div class="main">
+  <div class="left">
+    <div class="row">
 
   <div  id="collapsePanel">
-
-    <%= search_form_for @search, url: search_path do |f| %>
-
+      <h1 class="d-flex justify-content-center">Search by </h1>
+      <br/>
+      <%= form_tag  search_path, method: :get do   %>
         <%# <div class="row"> %>
           <%# <div class="col-md-2"> %>
             <%# <label>Price Range:</label> %>
           <%# </div> %>
-
             <%# <div class="col-md-2"> %>
               <%# <label>Min Price</label> %>
                 <%# <%= f.text_field :price_gteq, class: "form-control" %>
-
               <%# <label>Max Price</label> %>
                 <%# <%= f.text_field :price_lteq, class: "form-control" %>
             <%# </div> %>
           <%# <br/> %>
           <%# <br/> %>
-
         <%# <div class="row"> %>
           <%# <div class="col-md-2"> %>
             <%# <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>
@@ -33,116 +29,102 @@
       <%# <hr/> %>
 
 
-      <div class="row">
+      <%# <div class="row">
         <div class="col-md-4">
-          <div class="form-group select">
+          <div class="select">
             <label>Accommodate</label>
-              <%= f.select :acommodate_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "acommodate", prompt: "Select...", class: "form-control"  %>
-          </div>
+              <%= check_box_tag(:query, "1, 2, 3, 4, 5")  %>
+          <%# </div>
         </div>
         <div class="col-md-4">
-          <div class="form-group select">
+          <div class="select">
             <label>Bedrooms</label>
-              <%= f.select :bed_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bed_room", prompt: "Select...", class: "form-control"  %>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group select">
+              <%= label_tag :bed_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bed_room", prompt: "Select...", class: "form-control"  %>
+          <%# </div>
+        </div> %>
+        <%# <div class="col-md-4">
+          <div class="select">
             <label>Bathrooms</label>
-               <%= f.select :bath_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bath_room", prompt: "Select...", class: "form-control"  %>
-          </div>
+               <%= label_tag :bath_room_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4] ], id: "bath_room", prompt: "Select...", class: "form-control"  %>
+          <%# </div>
+        </div>
+      </div>
+      <hr/>  %>
+
+      <div class="row ">
+        <div class="col-md-4">
+          <%= check_box_tag(:query, "Entire") %> Entire Room
+        </div>
+        <div class="col-md-4">
+          <%= check_box_tag(:query, "private") %> Private
+        </div>
+        <div class="col-md-4">
+          <%= check_box_tag(:query, "Shared") %> Shared
         </div>
       </div>
       <hr/>
 
-      <div class="row">
-        <div class="col-md-4">
-          <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
-        </div>
-        <div class="col-md-4">
-          <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Private
-        </div>
-        <div class="col-md-4">
-          <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Shared
-        </div>
-      </div>
-      <hr/>
-
-      <div class="row">
-        <div class="col-md-4">
-          <%= check_box_tag "q[is_tv_eq]", true %> TV
-        </div>
-        <div class="col-md-4">
-          <%= check_box_tag "q[is_kitchen_eq]", true %> Kitcheb
-        </div>
-        <div class="col-md-4">
-          <%= check_box_tag "q[is_internet_eq]", true %> Internet
-        </div>
-        <div class="col-md-4">
-          <%= check_box_tag "q[is_heating_eq]", true %> Heating
-        </div>
-        <div class="col-md-4">
-          <%= check_box_tag "q[is_air_eq]", true %> Air Condition
-        </div>
-      </div>
-      <hr/>
+      <%# <div class="row"> %>
+        <%# <div class="col-md-4"> %>
+          <%# <%= check_box_tag(:query, "is_tv") %>
+        <%# </div> %>
+        <%# <div class="col-md-4"> %>
+          <%# <%= check_box_tag(:query, "kitchen") %>
+        <%# </div> %>
+        <%# <div class="col-md-4"> %>
+          <%# <%= check_box_tag(:query, "internet") %>
+        <%# </div> %>
+        <%# <div class="col-md-4"> %>
+          <%# <%= check_box_tag(:query, "heating") %>
+        <%# </div> %>
+        <%# <div class="col-md-4"> %>
+          <%# <%= check_box_tag(:query, "air condition") %>
+        <%# </div> %>
+      <%# </div> %>
+      <%# <hr/> %>
 
       <div class="row text-center">
-        <%= f.submit "Search", class: "btn btn-form" %>
+        <%= submit_tag "Search", class: "btn btn-form" %>
       </div>
 
       <% end %>
 
-    </div>
-  </div>
-</div>
 <br/>
 
 
   <div class="row">
-			<% @arrRooms.each do |room| %>
+			<% @rooms.each do |room| %>
+      <h2 class> <%= room.listing_name.capitalize %></h2>
 				<div class="col-md-2">
-          <div class="panel panel-default">
+         <div class="panel panel-default">
 						<div class="panel-heading preview">
-							<%= cl_image_tag room.cover_photo, width: 150, height: 150, crop: :fill %>
-						</div>
-						<div class="panel-body">
-							<%= link_to room.listing_name, room %>
-						</div>
+               <%= link_to room do %>
+							  <%= cl_image_tag room.cover_photo, width: 150, height: 150, crop: :fill %>
+						 </div>
+						<div class="panel-body" style="background-color: white !important; text-align: center;">
+							 <%=  room.listing_name %>
+               <% end %>
+						 </div>
           </div>
         </div>
-			<% end %>
-      </div>
+			 <% end %>
+     </div>
 
-
-
-
-
-  <div id="right">
-
-  </div>
 </div>
 
 
 <style>
 
-#main {
+.main {
   height: 100%;
 
   height: 100%;
 }
 
-#left {
-  padding: 10px 400px 10px 20px;
-
-  height: 100%%
-}
-
-#right {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 450px;
-  height: 100%;
+.left {
+  padding: 10px;
+  background-color: #222222;
+  border-radius: 25px;
+  color: white;
 }
 </style>

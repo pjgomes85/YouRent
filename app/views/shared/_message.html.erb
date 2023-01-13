@@ -1,5 +1,6 @@
     <% if notice %>
-      <div class="flash-msg">
+
+      <div class="flash-msg" data-controller="flash_message">
         <p class="alert alert-success alert-dismissible" id="one">
           <i class="fa fa-check" aria-hidden="true"></i>
             <strong><%= notice  %></strong>
@@ -9,7 +10,9 @@
       <% end %>
 
       <% if alert %>
-      <div class="flash-msg">
+
+      <div class="flash-msg" data-controller="flash_message">
+
         <p class="alert alert-danger alert-dismissible" role="alert" id="one">
           <i class="fa fa-times" aria-hidden="true"></i>
             <strong><%= alert %></strong>

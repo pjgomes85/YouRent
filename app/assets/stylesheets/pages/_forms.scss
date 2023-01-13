@@ -3,18 +3,24 @@
   height: 4rem;
   width: 100%;
   text-align: center;
-  color:white;
+  color:white !important;
+  background-color: black !important;
+}
+
+.form-control input {
+  color: white !important;
 }
 
 
 .form-group {
   margin-bottom: 25px;
   color:white;
+  background-color: black;
 }
 
 .form-group input {
   height: 45px;
-  border: 1px solid #ff5a5e;
+  border: 1px solid;
   cursor: pointer;
   user-select: none;
   color: white;
@@ -22,13 +28,15 @@
 }
 
 .form-group textarea {
-  border: 1px solid #00A699
+  border: 1px solid;
+  color: white;
 }
 
 .form-group select {
   width: 100%;
-  color: #565a5c;
-  background-color: white;
+
+  background-color: black;
+  color:white;
   border: 1px solid #ff5a5e;
   border-radius: 2px;
   padding: 10px;
@@ -42,7 +50,7 @@
   content: '\25bc';
   font-size: 1.2em;
   position: absolute;
-  color: #00A699;
+  color: white;
   top: 30px;
   right: 30px;
   transform: scale(0.94, 0.62);

@@ -15,3 +15,6 @@ application.register("map", MapController)
 
 import BookController from "./book_controller"
 application.register("book", BookController)
+
+import FlashController from "./flash_controller"
+application.register("flash_message", FlashController)

@@ -1,7 +1,7 @@
 <div class=" navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.png", class: "logo" %>
+      <p><%= image_tag "3.jpg", class: "logo" %></p>
     <% end %>
 
 
@@ -35,7 +35,9 @@
                 <hr class="solid">
                       <div class="search-bar"><i class="icon fa fa-user-circle-o" aria-hidden="true"></i><%= link_to "My Profile", user_path(current_user.id) %></div>
                     <div class="search-bar"><i class="icon fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "Edit Profile", edit_user_registration_path %></div>
-                  <div class="search-bar" style="color:red"><i class="icon fa fa-sign-out" aria-hidden="true"></i><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %></div>
+
+                  <div  data-turbo="true" class="search-bar"><i class="icon fa fa-sign-out" aria-hidden="true"></i><%= link_to "Log out", destroy_user_session_path,  data: {turbo_method: :delete} %></div>
+
                 </div>
               </ul>
 

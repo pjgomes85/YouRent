@@ -16,13 +16,13 @@ Rails.application.routes.draw do
       get 'checkout' => 'pages#checkout'
     end
     resources :reviews, only: :create
-    resources :photos, only: %i[create destroy]
+    resources :photos, only: %i[create destroy update]
     resources :reservations, only: %i[create destroy]
   end
   resources :reviews, only: [:destroy]
 
   get '/your_trips' => 'reservations#your_trips'
   get '/your_reservations' => 'reservations#your_reservations'
-
   get 'search' => 'pages#search'
+
 end

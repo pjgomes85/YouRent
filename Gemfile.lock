@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: 007075761375bce1f481717985647423db961a38
+  branch: main
+  specs:
+    ransack (3.2.1)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
+
+GIT
   remote: https://github.com/heartcombo/simple_form.git
   revision: 31fe25504771bd6cd425b585a4e0ed652fba4521
   specs:
@@ -214,10 +224,6 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    ransack (3.2.1)
-      activerecord (>= 6.1.5)
-      activesupport (>= 6.1.5)
-      i18n
     redis (4.8.0)
     regexp_parser (2.6.0)
     reline (0.3.1)
@@ -289,6 +295,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -308,7 +315,7 @@ DEPENDENCIES
   pg
   puma (~> 5.0)
   rails (~> 7.0.4)
-  ransack
+  ransack!
   redis (~> 4.0)
   sassc-rails
   selenium-webdriver

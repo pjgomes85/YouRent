@@ -2,8 +2,11 @@
 <div class="row">
 	<div class="col-md-3">
 		<div class="center">
-			<%= cl_image_tag avatar_url(@user), class: "avatar-full", style: "border-top-left-radius: 25px; border-top-right-radius: 25px;" %>
-
+      <% if current_user.avatar.attached? %>
+			    <%= cl_image_tag avatar_url(@user), class: "avatar-full", style: "border-top-left-radius: 25px; border-top-right-radius: 25px;" %>
+        <% else %>
+          <%= image_tag avatar_url1(@user), class: "avatar-full", style: "border-top-left-radius: 25px; border-top-right-radius: 25px;"%>
+      <% end %>
 
 
 		</div>
@@ -39,7 +42,7 @@
 							    <%= cl_image_tag room.photos[0].key, width: 250, height: 244, crop: :fill, style: "border-radius: 25px; border-bottom-left-radius: 0; border-bottom-right-radius: 0;" %>
                 <% end %>
 						</div>
-						<div class="panel-body"  style="text-align: center;" >
+						<div class="panel-body"  style="text-align: center; background-color: white;" >
 							<%= link_to room.listing_name, room %>
 						</div>
           </div>
