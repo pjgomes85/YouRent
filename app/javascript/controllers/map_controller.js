@@ -14,9 +14,11 @@ export default class extends Controller {
       container: this.element,
       style: 'mapbox://styles/mapbox/streets-v8',
       center: [-0.5800364, 44.841225],
-      zoom: 15
+      zoom: 15,
+
     });
 
+    this.map.scrollZoom.disable();
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
     // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
@@ -24,20 +26,24 @@ export default class extends Controller {
 
   }
 
-    #fitMapToMarkers() {
+
+
+
+  #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 8, duration: 150 })
+
   }
 
 
-    #addMarkersToMap() {
-      this.markersValue.forEach((marker) => {
+  #addMarkersToMap() {
+    this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
       new mapboxgl.Marker()
-        .setLngLat([marker.lng, marker.lat])
-        .setPopup(popup)
-        .addTo(this.map);
+      .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup)
+      .addTo(this.map);
     });
 
   }
