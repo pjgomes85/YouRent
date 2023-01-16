@@ -6,12 +6,10 @@
 
 
 
-
       <div class="row">
         <div class="col-md-4">
         <div><%= cl_image_tag @room.photos.first.key, width: 400, height: 500, style: "border-radius: 25px !important;" %></div>
         </div>
-
 
         <% if @room.photos.length > 0 %>
          <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -40,12 +38,9 @@
         <br/>
       <br/>
 
-        <div class="col-md-4 pull-right">
-            <%=  render "reservations/form" %>
-        </div>
 
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-8">
           <div class="row card-body">
             <div class="col-md-12">
 
@@ -64,7 +59,6 @@
                     <% end %>
                   </div>
                 </div>
-
               </div>
             <hr/>
 
@@ -153,9 +147,9 @@
 
 
      <!----- Right Panel -------->
-      <%# <div class="col-md-4 pull-right">
+      <div class="col-md-4 pull-right">
         <%=  render "reservations/form" %>
-      <%# </div> %>
+      </div>
 
 
 
@@ -163,7 +157,7 @@
 
       <!-- Reviews -->
       <div class="row">
-        <div class="booking-form booking col-md-8">
+        <div class="booking-form booking">
           <div class="col-md-8">
             <h3>Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h3>
             <div class="form-group" style="background-color: #282828;">
