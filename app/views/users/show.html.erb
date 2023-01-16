@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row" style="padding-bottom: 25%">
 	<div class="col-md-3">
 		<div class="center">
       <% if current_user.avatar.attached? %>
@@ -43,7 +43,7 @@
                 <% end %>
 						</div>
 						<div class="panel-body"  style="text-align: center; background-color: white;" >
-							<%= link_to room.listing_name, room %>
+							<%= link_to room.listing_name.capitalize, room %>
 						</div>
           </div>
 			<% end %>
