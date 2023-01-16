@@ -2,6 +2,14 @@ class PagesController < ApplicationController
   def home
     @rooms = Room.where(active: true).limit(3)
     @rooms = Room.all
+
+  #   @markers = @rooms.geocoded.map do |flat|
+  #     {
+  #       lat: flat.latitude,
+  #       lng: flat.longitude,
+  #       marker_html: render_to_string(partial: "marker")
+  #     }
+  #   end
   end
 
   def search
