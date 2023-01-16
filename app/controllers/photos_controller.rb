@@ -14,9 +14,10 @@ class PhotosController < ApplicationController
 
 
   def destroy
+    raise
     @photo = Photo.find(params[:id])
     room = @photo.room
-    @photo.destroy
+    @photo.purge
     @photos = Photo.where(room_id: room.id)
     redirect_back(fallback_location: request.referer)
     respond_to :js

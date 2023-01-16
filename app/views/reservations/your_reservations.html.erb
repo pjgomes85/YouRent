@@ -1,22 +1,20 @@
 <div class="col-md-3">
- <ul class="sidebar-list">
-  <li class="sidebar-item"><%= link_to "Your Listings", rooms_path, class: "sidebar-link" %></li>
-  <li class="sidebar-item"><%= link_to "Your Reservations", your_reservations_path, class: "sidebar-link active" %></li>
-  <%# <li class="sidebar-item"><%= link_to "Your Trips", your_trips_path, class: "sidebar-link" %></li>
- </ul>
- <br/>
- <br/>
-
-
+  <ul class="sidebar-list">
+    <li class="sidebar-item"><%= link_to "Your Listings", rooms_path, class: "sidebar-link" %></li>
+    <li class="sidebar-item"><%= link_to "Your Reservations", your_reservations_path, class: "sidebar-link active" %></li>
+    <%# <li class="sidebar-item"><%= link_to "Your Trips", your_trips_path, class: "sidebar-link" %></li>
+  </ul>
+  <br/>
+  <br/>
 </div>
 
-<div class="col-md-9">
-  <div class="panel panel-default" style="background-color: #222222; color: white;">
-    <div class="panel-heading">
-    Your Reservations
-    </div>
-      <div class="panel-body">
+  <div class="col-md-9" style="padding-bottom: 50%;">
+    <div class="panel panel-default" style="background-color: #222222; color: white;">
+      <div class="panel-heading">
+        Your Reservations
+      </div>
 
+      <div class="panel-body">
         <% @reservations.each do |reservation| %>
           <div class="row">
             <div class="col-md-2">
@@ -38,11 +36,11 @@
                         <p data-turbo="true"><%= link_to "CANCEL", room_reservation_path(reservation, reservation), remote: true, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your reservation?"}, class: "btn  btn-block"%></p>
                       </div>
 
-                         <div class="col-md-6">
+                         <%# <div class="col-md-6"> %>
                             <%# <%= link_to user_path(reservation.user) do %>
                               <%# <%= cl_image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %>
                                 <%# <%= reservation.user.fullname %>
-                      </div>
+                      <%# </div> %>
                     </div>
                   <hr/>
                 <% end %>
@@ -50,14 +48,8 @@
               </div >
             </div>
           </div>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
         </div>
-
+    </div>
 
    <%# <% @reservations.each do |reservation| %>
           <%# <div class="row"> %>
