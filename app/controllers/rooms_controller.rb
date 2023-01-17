@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_room, except: %i[index new create]
+  before_action :set_room, except: %i[index new create destroy]
   before_action :authenticate_user!, except: [:show]
   before_action :is_authorised, only: %i[listing pricing description photo_upload amenities location update]
 

@@ -7,7 +7,7 @@
 
 		<div class="row">
 			<div class="col-md-1">
-				<%# <%= image_tag avatar_url(r.user), class: "img-circle avatar-medium" %>
+				 <%= cl_image_tag avatar_url(r.user), class: "img-circle avatar-small" %>
 			</div>
 			<div class="col-md-11">
 				<div>
@@ -17,7 +17,7 @@
 				</div>
 
 				<div><%= r.created_at.strftime("%v") %></div>
-				<div><%= r.comment %></div>
+				<div><%= r.comment.capitalize %></div>
 			</div>
 		</div>
 	<% end %>
