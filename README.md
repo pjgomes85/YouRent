@@ -9,9 +9,8 @@ Installation:
 
 Bundle Install
 npm install
-yarn add bootstrap @popperjs/core
 yarn add @rails/actioncable
 yarn add js-autocomplete
 yarn add @mapbox/mapbox-gl-geocoder
 Rails DB Create
-Railds DB Migrate
+Rails DB Migrate
