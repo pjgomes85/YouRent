@@ -7,11 +7,7 @@ Installation:
 
 -In command line, run :
 
-Bundle Install
-npm install
-yarn add @rails/actioncable
-yarn add js-autocomplete
-yarn add @mapbox/mapbox-gl-geocoder
+Bundle Install / npm install / yarn add @rails/actioncable / yarn install
 
 Rails DB Create
 Rails DB Migrate
