@@ -41,16 +41,18 @@
     <br/><hr/><br/>
     <div class="text-center">
       <h2>Explore the world <i class="fa fa-plane" aria-hidden="true"></i></h2>
-      <p>Discover inspiring places close to home.</p>
+      <p>Discover the world.</p>
     </div>
     <br>
 
 <div class="row">
 	<div class="col-md-4 col-sm-12">
 		<a href="https://yourent.herokuapp.com/search?query=cascais">
-			<div class="discovery-card" style="background-image: url('https://images.unsplash.com/photo-1608651547914-4b1664f1e97c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'); border-radius: 25px;">
+			<div class="discovery-card" style="background-image: url('https://images.unsplash.com/photo-1615672337908-13fb56e84ad0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80'); border-radius: 25px;">
 				<div class="va-container">
 					<div class="va-middle text-center">
+            <br/>
+            <h3><span class="fi fi-pt"></span></h3>
 						<h2 class="strong">Cascais</h2>
 					</div>
 				</div>
@@ -64,11 +66,13 @@
 
 
 	<div class="col-md-4 col-sm-6">
-		<a href="https://yourent.herokuapp.com/search?query=london">
-			<div class="discovery-card" style="background-image: url('https://images.unsplash.com/photo-1470608756445-2c9906b0680f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'); border-radius: 25px;">
+		<a href="https://yourent.herokuapp.com/search?query=colorado">
+			<div class="discovery-card" style="background-image: url('https://images.unsplash.com/photo-1423450822265-fcd97e52ecb5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3004&q=80'); border-radius: 25px;">
 				<div class="va-container">
 					<div class="va-middle text-center">
-						<h2><strong>London</strong></h2>
+            <br/>
+            <h3><span class="fi fi-us"></span></h3>
+						<h2><strong>Colorado</strong></h2>
 					</div>
 				</div>
 			</div>
@@ -80,7 +84,9 @@
 			<div class="discovery-card" style="background-image: url('https://images.unsplash.com/photo-1558642084-fd07fae5282e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80'); border-radius: 25px;">
 				<div class="va-container">
 					<div class="va-middle text-center">
-						<h2><strong>Barcelona</strong></h2>
+            <br/>
+              <h3><span class="fi fi-es"></span></h3>
+						<h2><strong> Barcelona</strong></h2>
 					</div>
 				</div>
 			</div>
@@ -93,16 +99,16 @@
 <br/>
 
 <div class="text-center">
-	<h2>Recent Listings <i class="fa-solid fa-fire"></i></h2>
-	<p>Discover inspiring places close to home.</p>
+	<h2>Recent Listings <i class="fa-solid fa-fire" style="color: #ff5a5e;"></i></h2>
+	<p>Discover recent inspiring places</p>
 </div>
 <br>
 
   <div class="row text-center">
     <% @rooms.each do |room| %>
     <div class="col-md-4 col-sm-6">
-        <div class="hovereffect">
-            <%= cl_image_tag room.photos[0].key,  width: 460, height: 220, crop: :fill, class: "img-responsive" if room.photos.length > 0 %>
+        <div class="hovereffect discard">
+            <%= cl_image_tag room.photos[0].key,  width: 460, height: 280  if room.photos.length > 0 %>
            <%= link_to room, :action => 'go' do %>
                 <div class="overlay">
                     <h2><%= room.listing_name %></h2>
@@ -122,6 +128,16 @@
         </div>
       <% end %>
     </div>
-    
+
     <hr/>
   <hr/>
+
+<style>
+.discard {
+  width: 100%;
+  height: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+}
+</style>
