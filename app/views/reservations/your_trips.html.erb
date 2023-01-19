@@ -2,7 +2,7 @@
  <ul class="sidebar-list">
   <li class="sidebar-item"><%= link_to "Your Listings", rooms_path, class: "sidebar-link" %></li>
   <li class="sidebar-item"><%= link_to "Your Reservations", your_reservations_path, class: "sidebar-link" %></li>
-  <%# <li class="sidebar-item"><%= link_to "Your Trips", your_trips_path, class: "sidebar-link active" %></li> 
+  <%# <li class="sidebar-item"><%= link_to "Your Trips", your_trips_path, class: "sidebar-link active" %></li>
  </ul>
  <br/>
  <br/>
@@ -35,7 +35,7 @@
             <span class="pull-right text-center">
               <%# <%= image_tag avatar_url(trip.room.user), class: "img-circle avatar-medium" %><br/>
               <%= link_to user_path(trip.room.user), style: "text-decoration:none" do %>
-                <%= trip.room.user.fullname %>
+                <%= trip.room.user.full_name %>
                 <% end %>
             </span>
           </div>
