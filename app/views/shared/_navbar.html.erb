@@ -10,7 +10,7 @@
     <div class="flex-item" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-         <%= image_tag (current_user.avatar_url), class: "avatar"  %>
+         <%# <%= image_tag (current_user.avatar_url), class: "avatar"  %> 
           <li class="nav-item active">
             <%= link_to "BECOME A HOST", new_room_path, class: "btn"  %>
           </li>
