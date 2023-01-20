@@ -18,3 +18,6 @@ application.register("book", BookController)
 
 import FlashController from "./flash_controller"
 application.register("flash_message", FlashController)
+
+import ToogleController from "./toogle_controller"
+application.register("toogle", ToogleController)
