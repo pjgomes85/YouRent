@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
 
     if current_user == room.user
       flash[:alert] = "You cannot book your own property!"
-      
+
     else
       start_date = Date.parse(reservation_params[:start_date])
       end_date = Date.parse(reservation_params[:end_date])
@@ -34,7 +34,7 @@ class ReservationsController < ApplicationController
   end
 
   def your_reservations
-    # @rooms = current_user.rooms
+  
     @reservations = Reservation.where(user_id: current_user)
   end
 
